@@ -1,0 +1,22 @@
+# Core Web Framework (minimal set to get started)
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sqlalchemy
+python-dotenv
+
+# These will be installed later in Phase 2+
+# yfinance
+# akshare
+# tushare
+# pandas
+# numpy
+# backtrader
+# openai
+# httpx
+# alembic
+# python-multipart
+# python-jose[cryptography]
+# pytest
+# pytest-asyncio
