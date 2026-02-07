@@ -33,6 +33,8 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
 
     # Ensure models are loaded into metadata before table creation.
     import app.models.portfolio  # noqa: F401
+    import app.models.strategy  # noqa: F401
+    import app.models.backtest  # noqa: F401
 
     database.Base.metadata.create_all(bind=engine)
 

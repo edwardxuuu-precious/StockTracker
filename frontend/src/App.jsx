@@ -7,6 +7,7 @@ import CreatePortfolioPage from './pages/CreatePortfolioPage';
 import PortfolioDetailPage from './pages/PortfolioDetailPage';
 import EditPortfolioPage from './pages/EditPortfolioPage';
 import DataAnalysisPage from './pages/DataAnalysisPage';
+import StrategyBacktestPage from './pages/StrategyBacktestPage';
 function NavTelemetry() {
   const location = useLocation();
 
@@ -80,17 +81,7 @@ function App() {
               </div>
             }
           />
-          <Route
-            path="strategies"
-            element={
-              <div className="text-center py-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  交易策略
-                </h2>
-                <p className="text-gray-600">即将推出 (Phase 5)</p>
-              </div>
-            }
-          />
+          <Route path="strategies" element={<StrategyBacktestPage />} />
           <Route path="analytics" element={<DataAnalysisPage />} />
           <Route path="backtests" element={<DataAnalysisPage />} />
         </Route>
