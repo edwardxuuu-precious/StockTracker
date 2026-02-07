@@ -56,15 +56,15 @@ export default function HomePage() {
         </Link>
 
         <Link
-          to="/backtests"
+          to="/analytics"
           className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
         >
           <div className="flex items-center justify-center w-12 h-12 bg-orange-100 rounded-lg mb-4">
             <LineChart className="h-6 w-6 text-orange-600" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">回测分析</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">数据分析</h3>
           <p className="text-gray-600 text-sm">
-            使用历史数据验证策略,查看详细的性能指标
+            查看收益拆解、持仓分布和月度表现,并支持导出 CSV 报表
           </p>
         </Link>
       </div>
@@ -80,7 +80,7 @@ export default function HomePage() {
             🤖 <strong>第二步:</strong> 使用"AI 助手"通过自然语言创建策略
           </p>
           <p>
-            📊 <strong>第三步:</strong> 在"回测分析"中验证策略的历史表现
+            📊 <strong>第三步:</strong> 在"数据分析"中复盘组合收益和交易表现
           </p>
         </div>
       </div>

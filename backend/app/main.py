@@ -11,6 +11,7 @@ from .api.v1 import portfolio
 from .api.v1 import holding
 from .api.v1 import telemetry
 from .api.v1 import quotes
+from .api.v1 import analytics
 
 # Create FastAPI application
 app = FastAPI(
@@ -103,6 +104,7 @@ app.include_router(portfolio.router, prefix="/api/v1/portfolios", tags=["portfol
 app.include_router(holding.router, prefix="/api/v1/portfolios", tags=["holdings"])
 app.include_router(telemetry.router, prefix="/api/v1/telemetry", tags=["telemetry"])
 app.include_router(quotes.router, prefix="/api/v1/quotes", tags=["quotes"])
+app.include_router(analytics.router, prefix="/api/v1/analytics", tags=["analytics"])
 # Additional routers will be added in later phases
 # app.include_router(chat.router, prefix="/api/v1/chat", tags=["chat"])
 # app.include_router(stock.router, prefix="/api/v1/stocks", tags=["stocks"])

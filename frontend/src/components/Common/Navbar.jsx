@@ -38,10 +38,10 @@ export default function Navbar() {
               交易策略
             </Link>
             <Link
-              to="/backtests"
+              to="/analytics"
               className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
-              回测分析
+              数据分析
             </Link>
           </div>
 
@@ -83,11 +83,11 @@ export default function Navbar() {
               交易策略
             </Link>
             <Link
-              to="/backtests"
+              to="/analytics"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setMobileMenuOpen(false)}
             >
-              回测分析
+              数据分析
             </Link>
           </div>
         </div>
