@@ -37,7 +37,23 @@ start "StockTracker Backend" /d "%ROOT%backend" cmd /k "start-backend.cmd"
 echo Starting StockTracker Frontend...
 start "StockTracker Frontend" /d "%ROOT%frontend" cmd /k "start-frontend.cmd"
 
+set "BACKEND_PORT="
+set /a WAIT_COUNT=0
+:wait_backend_port
+if exist "%PORT_FILE%" (
+  set /p BACKEND_PORT=<"%PORT_FILE%"
+) else (
+  set /a WAIT_COUNT+=1
+  if %WAIT_COUNT% LEQ 30 (
+    ping -n 2 127.0.0.1 >nul
+    goto :wait_backend_port
+  )
+)
+if "%BACKEND_PORT%"=="" set "BACKEND_PORT=8001"
+
 echo.
 echo Backend and frontend started.
+echo Backend URL: http://localhost:%BACKEND_PORT%/
+echo API Docs:    http://localhost:%BACKEND_PORT%/docs
 echo Close the windows or press Ctrl+C in each to stop.
 endlocal

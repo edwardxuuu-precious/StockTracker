@@ -9,7 +9,7 @@
 | Git Branch | `<branch>` |
 | Commit / Tag | `<commit-or-tag>` |
 | Environment | `<Local / Staging / Prod-like>` |
-| Backend URL | `<http://localhost:8001>` |
+| Backend URL | `<http://localhost:<backend_port>>` |
 | Frontend URL | `<http://localhost:5173>` |
 | Tester | `<name>` |
 | Test Date | `<YYYY-MM-DD>` |
@@ -27,7 +27,8 @@
 ## 3) Entry Criteria (must pass before UAT)
 
 - [ ] Backend and frontend can both start successfully.
-- [ ] API documentation page is reachable.
+- [ ] Backend port is confirmed from `.runtime/backend-port.txt`.
+- [ ] API documentation page is reachable on `http://localhost:<backend_port>/docs`.
 - [ ] Test data is prepared and isolated with a unique prefix.
 - [ ] Critical dependencies are available (DB/network/API keys if needed).
 - [ ] Required test accounts/permissions are ready.
@@ -78,4 +79,3 @@ Sign-off:
 | QA/UAT | `<name>` | `<YYYY-MM-DD>` | `<sign>` |
 | Dev | `<name>` | `<YYYY-MM-DD>` | `<sign>` |
 | PM/Owner | `<name>` | `<YYYY-MM-DD>` | `<sign>` |
-

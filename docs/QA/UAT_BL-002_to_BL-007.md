@@ -7,7 +7,7 @@
 | Project | `StockTracker` |
 | Scope | `BL-002 ~ BL-007` |
 | Environment | `Local` |
-| Backend URL | `http://localhost:8001` |
+| Backend URL | `http://localhost:<backend_port>` |
 | Frontend URL | `http://localhost:5173` |
 | Tester | `<fill>` |
 | Test Date | `<YYYY-MM-DD>` |
@@ -19,9 +19,10 @@
 | Case ID | Steps | Expected | Status | Evidence |
 | --- | --- | --- | --- | --- |
 | `PRE-01` | Run `start-all.bat` | Backend/frontend both keep running | `< >` | `< >` |
-| `PRE-02` | Open `http://localhost:8001/docs` | Swagger works | `< >` | `< >` |
-| `PRE-03` | Open frontend URL | Home page renders correctly | `< >` | `< >` |
-| `PRE-04` | Create a unique test prefix (e.g. `UAT_20260207_`) | Test data is isolated | `< >` | `< >` |
+| `PRE-02` | Read backend port from `.runtime/backend-port.txt` (e.g. `8002`) | Port file exists and has a valid port | `< >` | `< >` |
+| `PRE-03` | Open `http://localhost:<backend_port>/docs` | Swagger works | `< >` | `< >` |
+| `PRE-04` | Open frontend URL | Home page renders correctly | `< >` | `< >` |
+| `PRE-05` | Create a unique test prefix (e.g. `UAT_20260207_`) | Test data is isolated | `< >` | `< >` |
 
 ---
 
@@ -163,4 +164,3 @@ Expected calculation:
 | QA/UAT | `<fill>` | `<YYYY-MM-DD>` | `< >` |
 | Dev | `<fill>` | `<YYYY-MM-DD>` | `< >` |
 | PM/Owner | `<fill>` | `<YYYY-MM-DD>` | `< >` |
-
