@@ -1,0 +1,63 @@
+name: Rollback Drill
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Rollback drill target env"
+        required: true
+        type: choice
+        default: staging
+        options:
+          - staging
+          - prod
+      live_mode:
+        description: "Run without --dry-run (requires docker stack)"
+        required: true
+        type: boolean
+        default: false
+      retain_count:
+        description: "Number of drill reports to keep"
+        required: true
+        type: string
+        default: "24"
+
+jobs:
+  rollback-drill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run rollback drill
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            ENV="staging"
+            LIVE="false"
+            RETAIN="24"
+          else
+            ENV="${{ inputs.target_env }}"
+            LIVE="${{ github.event.inputs.live_mode }}"
+            RETAIN="${{ inputs.retain_count }}"
+          fi
+
+          ARGS="--env ${ENV} --retain-count ${RETAIN}"
+          if [ "${LIVE}" = "true" ]; then
+            ARGS="${ARGS} --live"
+          fi
+          python backend/scripts/rollback_drill.py ${ARGS}
+
+      - name: Upload rollback drill reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rollback-drill-report
+          path: .runtime/rollback_drills/*.json

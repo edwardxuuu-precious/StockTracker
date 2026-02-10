@@ -1,0 +1,114 @@
+[
+  {
+    "query": "walk-forward validation and overfit control for parameter tuning",
+    "expected_keywords": ["walk-forward", "validation", "overfit", "window"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "scheduler heartbeat status and cycle report observability",
+    "expected_keywords": ["scheduler", "heartbeat", "cycle", "report"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "release gate profile policy and threshold settings",
+    "expected_keywords": ["profile", "policy", "precision", "recall"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "rollback drill retention and forced health failure",
+    "expected_keywords": ["rollback", "drill", "retention", "health"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "trade execution model commission and slippage",
+    "expected_keywords": ["commission", "slippage", "execution", "reconciliation"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "cross market calendar rules for CN and US",
+    "expected_keywords": ["cn", "us", "calendar", "timezone"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "strategy version snapshot compare and rerun",
+    "expected_keywords": ["snapshot", "version", "compare", "schema"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "citation evidence traceability with reference id and snippet",
+    "expected_keywords": ["citation", "evidence", "reference_id", "snippet"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  },
+  {
+    "query": "agent tuning report with quantitative and qualitative suggestions",
+    "expected_keywords": ["quantitative", "qualitative", "version", "parameter"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "data quality timestamp gap and missing bars backfill",
+    "expected_keywords": ["timestamp", "gap", "missing", "backfill"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "portfolio position sizing with risk budget controls",
+    "expected_keywords": ["portfolio", "position", "sizing", "budget"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "backtest final value reconciliation with equity curve",
+    "expected_keywords": ["final_value", "equity", "trade", "liquidation"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "strict balanced recall governance profile differences",
+    "expected_keywords": ["strict", "balanced", "recall", "fallback"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  },
+  {
+    "query": "yfinance rate limit handling and retry behavior",
+    "expected_keywords": ["yfinance", "rate", "errors", "retries"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "local data only backtest and reproducible execution",
+    "expected_keywords": ["local", "backtest", "simulated", "reproducible"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "promotion decision requires gate pass and no blockers",
+    "expected_keywords": ["promotion", "gate", "blocker", "threshold"],
+    "top_k": 4,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  }
+]

@@ -1,0 +1,52 @@
+name: KB Monthly Checkpoint
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
+    inputs:
+      target_profile:
+        description: "Monthly checkpoint profile"
+        required: true
+        type: choice
+        default: prod
+        options:
+          - staging
+          - prod
+      target_month:
+        description: "Target month YYYY-MM (empty means current month)"
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  kb-monthly-checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run monthly checkpoint
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            PROFILE="prod"
+            MONTH=""
+          else
+            PROFILE="${{ inputs.target_profile }}"
+            MONTH="${{ inputs.target_month }}"
+          fi
+          ARGS="--profile ${PROFILE}"
+          if [ -n "${MONTH}" ]; then
+            ARGS="${ARGS} --month ${MONTH}"
+          fi
+          python backend/scripts/kb_benchmark_monthly_checkpoint.py ${ARGS}
+
+      - name: Upload monthly checkpoint reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-monthly-checkpoint-report
+          path: .runtime/kb_monthly_checkpoints/**/*.json

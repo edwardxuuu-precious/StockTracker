@@ -1,0 +1,4 @@
+Strategy version governance:
+Create a snapshot for every material strategy change.
+Keep version metadata and reproducibility records linked to backtest ids.
+Reproducibility requires fixed data window, fixed parameters, and explicit version tags.

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "mode": "off",
+    "cases": "backend/config/kb_benchmark_cases.sample.json",
+    "min_precision": 0.35,
+    "min_recall": 0.35
+  },
+  "staging": {
+    "mode": "optional",
+    "cases": "backend/config/kb_benchmark_cases.kb004.json",
+    "min_precision": 0.5,
+    "min_recall": 0.75
+  },
+  "prod": {
+    "mode": "required",
+    "cases": "backend/config/kb_benchmark_cases.kb004.json",
+    "min_precision": 0.55,
+    "min_recall": 0.8
+  }
+}

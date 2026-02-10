@@ -1,0 +1,20 @@
+{
+  "jobs": [
+    {
+      "name": "cn-minute-demo",
+      "market": "CN",
+      "symbols": ["600519"],
+      "interval": "1m",
+      "provider": "akshare",
+      "run_every_minutes": 60
+    },
+    {
+      "name": "us-daily-demo",
+      "market": "US",
+      "symbols": ["AAPL", "MSFT"],
+      "interval": "1d",
+      "provider": "yfinance",
+      "run_every_minutes": 1440
+    }
+  ]
+}

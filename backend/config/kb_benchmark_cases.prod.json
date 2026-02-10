@@ -1,0 +1,72 @@
+[
+  {
+    "query": "how to reduce drawdown while keeping strategy stable",
+    "expected_keywords": ["drawdown", "risk", "allocation", "stop"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "improve risk adjusted return and sharpe ratio",
+    "expected_keywords": ["sharpe", "risk", "return", "volatility"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "how to avoid overfitting during parameter tuning",
+    "expected_keywords": ["overfit", "validation", "walk", "window"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  },
+  {
+    "query": "strategy versioning and reproducibility workflow",
+    "expected_keywords": ["version", "reproducibility", "snapshot", "strategy"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  },
+  {
+    "query": "data quality checks for missing bars and timestamp gaps",
+    "expected_keywords": ["gap", "missing", "timestamp", "quality"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "trading cost model including commission and slippage",
+    "expected_keywords": ["commission", "slippage", "cost", "execution"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "cross market backtest practices for US and CN equities",
+    "expected_keywords": ["us", "cn", "market", "backtest"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "portfolio level position sizing and risk budgeting",
+    "expected_keywords": ["portfolio", "position", "sizing", "budget"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "post trade review workflow and qualitative recommendations",
+    "expected_keywords": ["review", "qualitative", "recommendation", "report"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "knowledge base citation quality and evidence traceability",
+    "expected_keywords": ["citation", "evidence", "traceability", "source"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  }
+]

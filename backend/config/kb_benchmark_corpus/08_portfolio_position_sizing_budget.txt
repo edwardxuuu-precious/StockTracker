@@ -1,0 +1,4 @@
+Portfolio construction:
+Use position sizing based on risk budget constraints.
+Define portfolio exposure caps and dynamic position sizing rules.
+Risk budget discipline improves portfolio stability under stress.

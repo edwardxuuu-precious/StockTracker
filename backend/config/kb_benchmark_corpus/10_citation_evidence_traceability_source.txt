@@ -1,0 +1,4 @@
+Citation governance:
+Agent answers must include source citation and evidence traceability.
+Each citation should reference the source document and snippet.
+Evidence traceability is required for audit and reproducibility of recommendations.

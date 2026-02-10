@@ -1,0 +1,16 @@
+[
+  {
+    "query": "how to reduce drawdown and improve risk-adjusted returns",
+    "expected_keywords": ["drawdown", "risk", "allocation"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "balanced"
+  },
+  {
+    "query": "strategy versioning and reproducibility practices",
+    "expected_keywords": ["version", "reproducibility", "strategy"],
+    "top_k": 5,
+    "mode": "hybrid",
+    "policy_profile": "strict"
+  }
+]

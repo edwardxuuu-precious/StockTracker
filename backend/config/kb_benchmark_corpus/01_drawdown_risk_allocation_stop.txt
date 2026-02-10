@@ -1,0 +1,4 @@
+Drawdown control playbook:
+Use risk budgeting and position allocation limits to prevent portfolio collapse.
+Apply stop rules and staged exits when drawdown accelerates.
+Track drawdown, allocation_per_trade, and downside volatility after every backtest.

@@ -1,0 +1,4 @@
+Anti overfit checklist:
+Use validation splits and walk forward window testing before accepting a parameter set.
+Do not trust a single optimization pass.
+Overfit risk is lower when validation and walk window performance remain stable.

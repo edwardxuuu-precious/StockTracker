@@ -1,0 +1,141 @@
+name: Promotion Gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Promotion target environment"
+        required: true
+        type: choice
+        default: staging
+        options:
+          - dev
+          - staging
+          - prod
+      run_docker_build:
+        description: "Build docker images during gate"
+        required: true
+        type: boolean
+        default: false
+      run_deploy:
+        description: "Run deployment after gate passes"
+        required: true
+        type: boolean
+        default: false
+      rollback_on_failure:
+        description: "Attempt rollback if deployment health checks fail"
+        required: true
+        type: boolean
+        default: true
+      kb_benchmark_mode:
+        description: "KB benchmark gate mode"
+        required: true
+        type: choice
+        default: auto
+        options:
+          - auto
+          - off
+          - optional
+          - required
+      kb_min_precision:
+        description: "KB benchmark min precision@k"
+        required: true
+        type: string
+        default: "0.55"
+      kb_min_recall:
+        description: "KB benchmark min keyword recall"
+        required: true
+        type: string
+        default: "0.80"
+      kb_cases:
+        description: "KB benchmark cases JSON path"
+        required: true
+        type: string
+        default: "backend/config/kb_benchmark_cases.kb004.json"
+      kb_policy:
+        description: "KB benchmark policy JSON path"
+        required: true
+        type: string
+        default: "backend/config/kb_benchmark_policy.json"
+  push:
+    branches:
+      - main
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Ensure ingestion job config exists
+        run: |
+          if [ ! -f backend/config/ingestion_jobs.json ]; then
+            cp backend/config/ingestion_jobs.example.json backend/config/ingestion_jobs.json
+          fi
+
+      - name: Run release gate
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            ARGS="--profile staging --output .runtime/release_gate_staging_${GITHUB_RUN_ID}.json --allow-dirty-git --skip-docker --kb-policy backend/config/kb_benchmark_policy.json --kb-benchmark-mode optional --kb-cases backend/config/kb_benchmark_cases.kb004.json --kb-min-precision 0.50 --kb-min-recall 0.75"
+          else
+            PROFILE="${{ inputs.target_env }}"
+            OUT=".runtime/release_gate_${PROFILE}_${GITHUB_RUN_ID}.json"
+            ARGS="--profile ${PROFILE} --output ${OUT} --allow-dirty-git --kb-policy ${{ inputs.kb_policy }} --kb-benchmark-mode ${{ inputs.kb_benchmark_mode }} --kb-cases ${{ inputs.kb_cases }} --kb-min-precision ${{ inputs.kb_min_precision }} --kb-min-recall ${{ inputs.kb_min_recall }}"
+            if [ "${{ github.event.inputs.run_docker_build }}" = "true" ]; then
+              ARGS="${ARGS} --docker-build"
+            else
+              ARGS="${ARGS} --skip-docker"
+            fi
+          fi
+
+          python backend/scripts/release_gate.py ${ARGS}
+
+      - name: Upload release gate report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-gate-report
+          path: .runtime/release_gate_*.json
+
+  deploy-after-gate:
+    runs-on: ubuntu-latest
+    needs: release-gate
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_deploy == true && needs.release-gate.result == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure runtime directory
+        run: mkdir -p .runtime
+
+      - name: Deploy with rollback
+        run: |
+          ENV="${{ inputs.target_env }}"
+          ARGS="--env ${ENV} --project-name stocktracker-${ENV} --output .runtime/deploy_report_${ENV}_${GITHUB_RUN_ID}.json"
+          if [ "${{ inputs.rollback_on_failure }}" = "true" ]; then
+            ARGS="${ARGS} --rollback-on-failure"
+          fi
+          python backend/scripts/deploy_with_rollback.py ${ARGS}
+
+      - name: Upload deploy report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-report
+          path: .runtime/deploy_report_*.json

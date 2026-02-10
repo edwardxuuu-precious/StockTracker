@@ -1,0 +1,4 @@
+Data quality rules:
+Detect timestamp gap and missing bars before running research jobs.
+Record missing segments and data quality incidents in ingestion logs.
+Repair quality issues with targeted backfill for the affected timestamp range.

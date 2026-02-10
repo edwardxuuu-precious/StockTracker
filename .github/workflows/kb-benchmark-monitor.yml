@@ -1,0 +1,63 @@
+name: KB Benchmark Monitor
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      target_profile:
+        description: "KB monitor target profile"
+        required: true
+        type: choice
+        default: prod
+        options:
+          - staging
+          - prod
+      mode:
+        description: "Monitor mode override"
+        required: true
+        type: choice
+        default: auto
+        options:
+          - auto
+          - off
+          - optional
+          - required
+      policy:
+        description: "KB policy file path"
+        required: true
+        type: string
+        default: "backend/config/kb_benchmark_policy.json"
+
+jobs:
+  kb-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run KB benchmark monitor
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            PROFILE="prod"
+            MODE="auto"
+            POLICY="backend/config/kb_benchmark_policy.json"
+          else
+            PROFILE="${{ inputs.target_profile }}"
+            MODE="${{ inputs.mode }}"
+            POLICY="${{ inputs.policy }}"
+          fi
+          python backend/scripts/kb_benchmark_monitor.py --profile "${PROFILE}" --mode "${MODE}" --policy "${POLICY}"
+
+      - name: Upload KB monitor reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-benchmark-monitor-report
+          path: .runtime/kb_benchmark_history/**/*.json

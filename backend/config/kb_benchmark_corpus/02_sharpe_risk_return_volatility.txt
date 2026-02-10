@@ -1,0 +1,4 @@
+Sharpe optimization note:
+To improve risk adjusted return, increase return consistency and reduce volatility.
+Monitor rolling sharpe ratio together with downside risk.
+Avoid signal settings that boost return at the cost of unstable volatility.

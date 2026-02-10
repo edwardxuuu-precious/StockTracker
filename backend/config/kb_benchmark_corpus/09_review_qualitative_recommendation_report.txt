@@ -1,0 +1,4 @@
+Post trade review process:
+Every report should include qualitative recommendation and quantitative follow-up items.
+The review process combines metric diagnostics, trade analysis, and recommendation tracking.
+A clear report structure improves decision quality during strategy iteration.

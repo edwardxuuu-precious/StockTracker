@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stocktracker-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - APP_ENV=development
+      - DATABASE_URL=sqlite:///./stocktracker.db
+      - ALLOW_SIM_BACKTEST=false
+    volumes:
+      - ./backend:/app
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
+
+  scheduler:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stocktracker-scheduler
+    depends_on:
+      - backend
+    environment:
+      - APP_ENV=development
+      - DATABASE_URL=sqlite:///./stocktracker.db
+      - INGESTION_JOBS_PATH=/app/config/ingestion_jobs.json
+    volumes:
+      - ./backend:/app
+    command: python run_scheduler.py
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:8001
+    container_name: stocktracker-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"

@@ -1,0 +1,4 @@
+Execution cost model:
+Backtests must include commission and slippage assumptions.
+Cost sensitivity analysis should vary commission, slippage, and execution delay.
+Stable strategy performance under higher cost assumptions is a key acceptance condition.

@@ -1,0 +1,4 @@
+Cross market testing note:
+Evaluate market behavior differences between US and CN equities.
+A cross market backtest should document calendar alignment and market-specific liquidity constraints.
+Compare strategy robustness across US and CN market samples.

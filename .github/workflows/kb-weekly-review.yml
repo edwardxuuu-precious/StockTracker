@@ -1,0 +1,48 @@
+name: KB Weekly Review
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      target_profile:
+        description: "Review target profile"
+        required: true
+        type: choice
+        default: prod
+        options:
+          - staging
+          - prod
+      lookback:
+        description: "Number of points to include in trend review"
+        required: true
+        type: string
+        default: "4"
+
+jobs:
+  kb-weekly-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run KB weekly review
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            PROFILE="prod"
+            LOOKBACK="4"
+          else
+            PROFILE="${{ inputs.target_profile }}"
+            LOOKBACK="${{ inputs.lookback }}"
+          fi
+          python backend/scripts/kb_benchmark_review.py --profile "${PROFILE}" --lookback "${LOOKBACK}"
+
+      - name: Upload KB weekly review reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-weekly-review-report
+          path: .runtime/kb_benchmark_reviews/**/*.json

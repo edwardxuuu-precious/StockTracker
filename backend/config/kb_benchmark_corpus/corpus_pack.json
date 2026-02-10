@@ -1,0 +1,182 @@
+[
+  {
+    "source_name": "kb4_01_walk_forward_overfit.pdf",
+    "source_type": "pdf",
+    "title": "Walk Forward Overfit Control",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Use walk-forward validation with rolling window splits. Detect overfit by out-of-sample checks, parameter stability, and cross-regime consistency."
+  },
+  {
+    "source_name": "kb4_02_scheduler_heartbeat.txt",
+    "source_type": "txt",
+    "title": "Scheduler Heartbeat Observability",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Scheduler observability requires heartbeat status, per-cycle report files, symbols_failed counters, and alert webhook hooks for degraded cycles."
+  },
+  {
+    "source_name": "kb4_03_release_gate_policy.json",
+    "source_type": "json",
+    "title": "Release Gate Threshold Policy",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Release gate uses profile policy: dev off, staging optional, prod required. Policy includes cases file path and min precision and min recall thresholds."
+  },
+  {
+    "source_name": "kb4_04_rollback_drill_retention.txt",
+    "source_type": "txt",
+    "title": "Rollback Drill Retention",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Rollback drill should force initial health failure, exercise rollback path, archive drill summary, and apply retention by latest report count."
+  },
+  {
+    "source_name": "kb4_05_trade_cost_model.pdf",
+    "source_type": "pdf",
+    "title": "Trade Cost And Execution Model",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Execution model must include commission, slippage, fee assumptions, and post-trade reconciliation of realized pnl impact."
+  },
+  {
+    "source_name": "kb4_06_cross_market_calendar.txt",
+    "source_type": "txt",
+    "title": "Cross Market Calendar",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Cross market backtest requires CN and US calendar handling, timezone normalization, and market-specific symbol routing."
+  },
+  {
+    "source_name": "kb4_07_strategy_version_compare.json",
+    "source_type": "json",
+    "title": "Strategy Version Compare",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Strategy lifecycle includes snapshot creation, version compare, and rerun workflow using reproducible parameter schema."
+  },
+  {
+    "source_name": "kb4_08_citation_traceability.txt",
+    "source_type": "txt",
+    "title": "Citation Traceability",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Every recommendation should include citation evidence, reference_id, snippet extraction, and source traceability metadata."
+  },
+  {
+    "source_name": "kb4_09_agent_tuning_report.pdf",
+    "source_type": "pdf",
+    "title": "Agent Tuning Report",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Agent tuning output should include quantitative metrics and qualitative suggestions, then propose next strategy version and parameter candidates."
+  },
+  {
+    "source_name": "kb4_10_data_gap_backfill.txt",
+    "source_type": "txt",
+    "title": "Data Gap Backfill",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Data quality checks focus on timestamp gap detection, missing bars, ingestion replay, and checkpoint-based backfill tracking."
+  },
+  {
+    "source_name": "kb4_11_position_sizing_budget.json",
+    "source_type": "json",
+    "title": "Position Sizing Risk Budget",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Portfolio risk budget controls position sizing by max exposure, drawdown budget, and symbol-level risk caps."
+  },
+  {
+    "source_name": "kb4_12_backtest_trade_reconcile.txt",
+    "source_type": "txt",
+    "title": "Backtest Trade Reconcile",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Backtest verification checks final_value consistency with terminal equity curve and reconciles trade details including forced liquidation."
+  },
+  {
+    "source_name": "kb4_13_governance_profiles.pdf",
+    "source_type": "pdf",
+    "title": "Governance Profiles",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Governance profiles strict balanced recall set min_score, max_per_document, and fallback behavior for citation control."
+  },
+  {
+    "source_name": "kb4_14_yfinance_limits.txt",
+    "source_type": "txt",
+    "title": "YFinance Rate Limits",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "US provider may hit yfinance rate limit. Scheduler and ingestion should record errors and continue idempotent retries."
+  },
+  {
+    "source_name": "kb4_15_local_data_only.json",
+    "source_type": "json",
+    "title": "Local Data Backtest Rule",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Backtest engine must run on local bars only, disable simulated quote mode, and keep reproducible execution outputs."
+  },
+  {
+    "source_name": "kb4_16_visual_report.txt",
+    "source_type": "txt",
+    "title": "Visual Backtest Report",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Visual report should include equity curve, drawdown series, trade list, and parameter summary for fast review."
+  },
+  {
+    "source_name": "kb4_17_alert_routing.pdf",
+    "source_type": "pdf",
+    "title": "Alert Routing",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Alert routing policy should map scheduler failure severity to webhook channels and include cycle report links."
+  },
+  {
+    "source_name": "kb4_18_promotion_decision.txt",
+    "source_type": "txt",
+    "title": "Promotion Decision Rule",
+    "metadata": {
+      "benchmark_corpus": true,
+      "pack": "kb004"
+    },
+    "content": "Promotion requires release gate passed equals true, no blocker checks, and benchmark threshold compliance evidence."
+  }
+]
