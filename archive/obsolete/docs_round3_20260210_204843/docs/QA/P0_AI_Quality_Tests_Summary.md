@@ -113,5 +113,5 @@ assert top_confidence in ["medium", "high"]  # 置信度合理
 
 相关文档：
 - 完整分析: [AI_Features_Testing_Analysis_2026-02-10.md](AI_Features_Testing_Analysis_2026-02-10.md)
-- UAT 执行记录: [UAT_FullChain_Execution_2026-02-09.md](UAT_FullChain_Execution_2026-02-09.md)
+- UAT 执行记录: [UAT_RealUsage_Log_2026-02.md](UAT_RealUsage_Log_2026-02.md)
 - Real Usage Log: [UAT_RealUsage_Log_2026-02.md](UAT_RealUsage_Log_2026-02.md)

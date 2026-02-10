@@ -4,6 +4,7 @@
 This folder now keeps only the minimal progress documents needed for daily work.
 
 ## Keep And Use
+- `docs/README.md`: top-level docs entry.
 - `docs/Progress/README.md`: this hub document.
 - `docs/Progress/Current_Backlog_2026-02-09.md`: current backlog and status.
 - `docs/Progress/Update_Workflow.md`: how to update progress docs consistently.

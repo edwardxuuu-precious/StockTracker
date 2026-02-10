@@ -156,6 +156,6 @@ Before each release, run full benchmarks and verify:
 
 ## Related Documentation
 
-- [AI Features Testing Analysis](../../docs/QA/AI_Features_Testing_Analysis_2026-02-10.md)
-- [P0 AI Quality Tests Summary](../../docs/QA/P0_AI_Quality_Tests_Summary.md)
+- [AI Quality Overview](../../docs/QA/AI_Quality_Overview_2026-02-10.md)
+- [Agent LLM Readiness Checklist](../../docs/QA/Agent_LLM_Readiness_Checklist_2026-02-10.md)
 - [Test AI Quality](../tests/test_ai_quality.py)

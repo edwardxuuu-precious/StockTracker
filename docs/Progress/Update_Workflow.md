@@ -1,6 +1,6 @@
 # Progress Update Workflow
 
-Last updated: `2026-02-09`
+Last updated: `2026-02-10`
 
 Use this workflow after each development session.
 
@@ -8,20 +8,20 @@ Use this workflow after each development session.
 
 1. Run validation commands.
 - `python -m pytest backend/tests -q`
-- if release-related changes: `python backend/scripts/release_gate.py --profile dev --skip-docker --allow-dirty-git`
+- If release-related changes: `python backend/scripts/release_gate.py --profile dev --skip-docker --allow-dirty-git`
 
-2. Update acceptance snapshot.
-- File: `docs/QA/Acceptance_Checklist_2026-02-09.md`
-- Update latest pass/fail numbers and any new acceptance checks.
+2. Update active QA execution log.
+- File: `docs/QA/UAT_RealUsage_Log_2026-02.md`
+- Update latest run results and evidence paths.
 
 3. Update actionable backlog.
 - File: `docs/Progress/Current_Backlog_2026-02-09.md`
 - Ensure each task keeps `ID/Goal/Status/Next Action/Done Criteria`.
 - Move completed items to `Completed Tasks (Recent)`.
 
-4. Update global status and risks.
-- File: `docs/Progress/Master_Progress.md`
-- Update `Current Risks`, `Next Focus`, and `Latest Implementation Notes`.
+4. Update project handoff snapshot when major changes land.
+- File: `docs/HANDOFF_TO_CODEX_2026-02-10.md`
+- Update key code changes, evidence files, quality status, and next actions.
 
 5. Keep runbook/ops in sync when process changes.
 - Files: `docs/Runbook.md`, `docs/Ops/Release_Governance.md`
@@ -37,6 +37,6 @@ Use this workflow after each development session.
 ## Cross-Device Resume Rule
 
 When resuming from another device:
-1. Read `docs/Progress/Master_Progress.md`
+1. Read `docs/HANDOFF_TO_CODEX_2026-02-10.md`
 2. Read `docs/Progress/Current_Backlog_2026-02-09.md`
 3. Execute the `Next Action` of the highest-priority `in_progress` task

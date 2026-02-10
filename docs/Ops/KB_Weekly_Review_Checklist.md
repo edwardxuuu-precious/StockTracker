@@ -36,7 +36,7 @@ Use this checklist once per week for `KB-006` trend governance.
 ## 5) Update Project State
 
 - [ ] Update `docs/Progress/Current_Backlog_2026-02-09.md`.
-- [ ] Update `docs/Progress/Master_Progress.md`.
+- [ ] Update `docs/HANDOFF_TO_CODEX_2026-02-10.md`.
 - [ ] If thresholds changed, update:
   - `backend/config/kb_benchmark_policy.json`
   - `docs/Ops/Release_Governance.md`

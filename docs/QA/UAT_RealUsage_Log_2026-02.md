@@ -17,7 +17,8 @@ Last updated: `2026-02-10`
 
 - 每次操作必须记录：输入、输出、耗时、异常。
 - 若出现异常，先记录证据路径，再决定是否提缺陷。
-- 缺陷统一追加到：`docs/QA/UAT_FullChain_Defects_2026-02-09.md`。
+- 当前缺陷统一记录在本文件（Operation Log + Day Summary），不再维护独立缺陷清单。
+- 历史记录中的 `.runtime/...` 证据路径已归档迁移到 `archive/generated/cleanup_20260210_173315/.runtime/...`。
 
 ## 3) Day 1 Script (Data -> Backtest -> Agent -> Version)
 
