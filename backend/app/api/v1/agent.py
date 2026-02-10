@@ -1,7 +1,8 @@
 """Agent APIs for strategy generation, tuning, and reporting."""
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
 from ...config import get_settings
@@ -13,6 +14,7 @@ from ...schemas.agent import (
     AgentCitation,
     AgentGenerateRequest,
     AgentGenerateResponse,
+    AgentHealthResponse,
     AgentRecommendation,
     AgentReportRequest,
     AgentReportResponse,
@@ -22,7 +24,13 @@ from ...schemas.agent import (
 )
 from ...schemas.backtest import BacktestCreate
 from ...schemas.strategy import StrategyResponse
+from ...services.llm_service import (
+    LLMUnavailableError,
+    llm_runtime_info,
+    probe_llm_connection,
+)
 from ...services.agent_service import (
+    build_ai_backtest_insights,
     build_qualitative_recommendations,
     build_quantitative_recommendations,
     build_report_markdown,
@@ -71,9 +79,51 @@ def _snapshot_strategy(
     return version
 
 
+@router.get("/health", response_model=AgentHealthResponse)
+async def agent_health(probe: bool = Query(default=False)):
+    """Expose LLM readiness for agent flows.
+
+    probe=false: config-only check
+    probe=true: perform a real lightweight provider call
+    """
+    settings = get_settings()
+    info = llm_runtime_info()
+    llm_required = bool(settings.AGENT_REQUIRE_LLM)
+
+    reachable: bool | None = None
+    detail = "llm config is present" if info["configured"] else "llm config is missing"
+    if probe:
+        reachable, detail = probe_llm_connection()
+
+    ok = bool(info["configured"])
+    if probe and reachable is not None:
+        ok = ok and bool(reachable)
+    if not llm_required:
+        ok = True
+
+    payload = AgentHealthResponse(
+        ok=ok,
+        llm_required=llm_required,
+        provider=str(info["provider"]),
+        model=str(info["model"]),
+        base_url=str(info["base_url"]),
+        configured=bool(info["configured"]),
+        reachable=reachable,
+        detail=detail,
+        checked_at=now_utc(),
+    )
+    return JSONResponse(
+        status_code=200 if payload.ok else 503,
+        content=payload.model_dump(mode="json"),
+    )
+
+
 @router.post("/strategy/generate", response_model=AgentGenerateResponse)
 async def generate_strategy(payload: AgentGenerateRequest, db: Session = Depends(get_db)):
-    generated = generate_strategy_from_prompt(payload.prompt)
+    try:
+        generated = generate_strategy_from_prompt(payload.prompt)
+    except LLMUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
     strategy_response: StrategyResponse | None = None
 
     if payload.save_strategy:
@@ -236,6 +286,12 @@ async def build_backtest_report(
     citations = [AgentCitation(**item) for item in citations_raw]
 
     markdown = build_report_markdown(backtest, trades, all_recs)
+    try:
+        ai_insights = build_ai_backtest_insights(backtest, trades, payload.question)
+    except LLMUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    if ai_insights:
+        markdown += f"\n\n{ai_insights}\n"
     if citations:
         markdown += "\n\n## Evidence\n"
         for item in citations:

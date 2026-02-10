@@ -97,3 +97,48 @@ def test_agent_generate_tune_and_report(client):
     report_body = report.json()
     assert report_body["backtest_id"] == body["best_trial"]["backtest_id"]
     assert "Recommendations" in report_body["markdown"]
+
+
+def test_agent_health_config_only_optional_mode(client):
+    health = client.get("/api/v1/agent/health")
+    assert health.status_code == 200
+    body = health.json()
+    assert body["ok"] is True
+    assert body["llm_required"] is False
+    assert body["reachable"] is None
+
+
+def test_agent_health_strict_mode_without_key_returns_503(client, monkeypatch):
+    from app.config import get_settings
+
+    monkeypatch.setenv("AGENT_REQUIRE_LLM", "true")
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "")
+    get_settings.cache_clear()
+    try:
+        health = client.get("/api/v1/agent/health")
+        assert health.status_code == 503
+        body = health.json()
+        assert body["ok"] is False
+        assert body["llm_required"] is True
+        assert body["configured"] is False
+    finally:
+        get_settings.cache_clear()
+
+
+def test_agent_health_probe_success(client, monkeypatch):
+    from app.api.v1 import agent as agent_api
+    from app.config import get_settings
+
+    monkeypatch.setenv("AGENT_REQUIRE_LLM", "true")
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "test-key")
+    get_settings.cache_clear()
+    monkeypatch.setattr(agent_api, "probe_llm_connection", lambda: (True, "reachable"))
+    try:
+        health = client.get("/api/v1/agent/health?probe=true")
+        assert health.status_code == 200
+        body = health.json()
+        assert body["ok"] is True
+        assert body["reachable"] is True
+        assert body["detail"] == "reachable"
+    finally:
+        get_settings.cache_clear()

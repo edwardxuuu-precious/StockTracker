@@ -90,3 +90,15 @@ class AgentReportResponse(BaseModel):
     quantitative_recommendations: list[AgentRecommendation]
     qualitative_recommendations: list[AgentRecommendation]
     citations: list[AgentCitation]
+
+
+class AgentHealthResponse(BaseModel):
+    ok: bool
+    llm_required: bool
+    provider: str
+    model: str
+    base_url: str
+    configured: bool
+    reachable: bool | None = None
+    detail: str
+    checked_at: datetime

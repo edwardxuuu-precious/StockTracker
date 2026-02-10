@@ -135,3 +135,81 @@ def test_backtest_validation_and_not_found(client):
         },
     )
     assert not_found_strategy.status_code == 404
+
+
+def test_custom_strategy_code_backtest(client):
+    from app.database import SessionLocal
+    from app.models.market_data import Bar1d, Instrument
+    from datetime import datetime, timezone
+
+    strategy = client.post(
+        "/api/v1/strategies/",
+        json={
+            "name": "Custom Breakout",
+            "description": "custom code strategy",
+            "strategy_type": "custom",
+            "parameters": {
+                "lookback": 2,
+                "entry_threshold": 0.01,
+                "exit_threshold": -0.005,
+                "allocation_per_trade": 0.3,
+                "commission_rate": 0.001,
+            },
+            "code": (
+                "def signal(prices, params):\n"
+                "    lookback = int(params.get('lookback', 2))\n"
+                "    if len(prices) <= lookback:\n"
+                "        return 'HOLD'\n"
+                "    prev = prices[-(lookback+1)]\n"
+                "    now = prices[-1]\n"
+                "    change = (now - prev) / prev if prev > 0 else 0\n"
+                "    if change >= float(params.get('entry_threshold', 0.01)):\n"
+                "        return 'BUY'\n"
+                "    if change <= float(params.get('exit_threshold', -0.005)):\n"
+                "        return 'SELL'\n"
+                "    return 'HOLD'\n"
+            ),
+        },
+    )
+    assert strategy.status_code == 201
+    strategy_id = strategy.json()["id"]
+
+    db = SessionLocal()
+    try:
+        instrument = Instrument(symbol="AAPL", market="US", name="AAPL Inc")
+        db.add(instrument)
+        db.flush()
+        prices = [100, 101, 103, 104, 102, 105, 107, 103]
+        for day, close in enumerate(prices, start=1):
+            db.add(
+                Bar1d(
+                    instrument_id=instrument.id,
+                    ts=datetime(2025, 2, day, tzinfo=timezone.utc),
+                    open=float(close),
+                    high=float(close) + 1,
+                    low=float(close) - 1,
+                    close=float(close),
+                    volume=1000 + day,
+                    source="test",
+                )
+            )
+        db.commit()
+    finally:
+        db.close()
+
+    run = client.post(
+        "/api/v1/backtests/",
+        json={
+            "strategy_id": strategy_id,
+            "symbols": ["AAPL"],
+            "start_date": "2025-02-01",
+            "end_date": "2025-02-08",
+            "initial_capital": 100000,
+            "parameters": {"market": "US", "interval": "1d"},
+        },
+    )
+    assert run.status_code == 201
+    payload = run.json()
+    assert payload["status"] == "completed"
+    assert payload["trade_count"] > 0
+    assert payload["results"]["strategy_type"] == "custom"

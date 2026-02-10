@@ -24,6 +24,10 @@ def _args(**overrides):
         "kb_cases": "",
         "kb_min_precision": None,
         "kb_min_recall": None,
+        "agent_health_mode": "auto",
+        "agent_health_url": "",
+        "agent_health_probe": True,
+        "agent_health_timeout_seconds": 10.0,
     }
     defaults.update(overrides)
     return Namespace(**defaults)
@@ -83,3 +87,71 @@ def test_kb_policy_resolution_applies_profile_values(tmp_path):
     assert str(config.cases_path).replace("\\", "/").endswith("backend/config/kb_benchmark_cases.kb004.json")
     assert config.min_precision == 0.55
     assert config.min_recall == 0.8
+
+
+def test_agent_health_mode_auto_resolution():
+    gate = _load_release_gate()
+    assert gate._resolve_agent_health_mode("dev", "auto") == "off"
+    assert gate._resolve_agent_health_mode("staging", "auto") == "optional"
+    assert gate._resolve_agent_health_mode("prod", "auto") == "required"
+    assert gate._resolve_agent_health_mode("prod", "off") == "off"
+
+
+def test_agent_health_optional_missing_url_is_non_blocking():
+    gate = _load_release_gate()
+    result = gate._check_agent_health(
+        "staging",
+        _args(agent_health_mode="optional", agent_health_url=""),
+    )
+    assert result.status == "pass"
+    assert "optional check skipped" in result.details
+
+
+def test_agent_health_required_missing_url_blocks():
+    gate = _load_release_gate()
+    result = gate._check_agent_health(
+        "prod",
+        _args(agent_health_mode="required", agent_health_url=""),
+    )
+    assert result.status == "fail"
+    assert "required base URL missing" in result.details
+
+
+def test_agent_health_optional_command_failure_is_non_blocking(monkeypatch):
+    gate = _load_release_gate()
+
+    def _fake_run(*_args, **_kwargs):
+        return gate.CheckResult(
+            name="agent-health",
+            status="fail",
+            duration_seconds=0.1,
+            details="exit_code=1",
+        )
+
+    monkeypatch.setattr(gate, "_run_command", _fake_run)
+    result = gate._check_agent_health(
+        "staging",
+        _args(agent_health_mode="optional", agent_health_url="http://localhost:8000"),
+    )
+    assert result.status == "pass"
+    assert "non-blocking failure" in result.details
+
+
+def test_agent_health_required_command_failure_blocks(monkeypatch):
+    gate = _load_release_gate()
+
+    def _fake_run(*_args, **_kwargs):
+        return gate.CheckResult(
+            name="agent-health",
+            status="fail",
+            duration_seconds=0.1,
+            details="exit_code=1",
+        )
+
+    monkeypatch.setattr(gate, "_run_command", _fake_run)
+    result = gate._check_agent_health(
+        "prod",
+        _args(agent_health_mode="required", agent_health_url="http://localhost:8000"),
+    )
+    assert result.status == "fail"
+    assert "mode=required failed" in result.details

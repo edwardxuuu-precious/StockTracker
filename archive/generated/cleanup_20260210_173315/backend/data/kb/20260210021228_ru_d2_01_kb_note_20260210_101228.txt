@@ -1,0 +1,4 @@
+Silver fox risk protocol checklist:
+1) allocation throttle 0.18 in volatile regimes;
+2) max drawdown guard 0.12;
+3) rebalance cooldown 3 days.

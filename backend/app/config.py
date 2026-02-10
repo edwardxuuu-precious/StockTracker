@@ -27,6 +27,10 @@ class Settings(BaseSettings):
     OPENROUTER_API_KEY: str = ""
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
     OPENROUTER_MODEL: str = "anthropic/claude-3.5-sonnet"
+    AGENT_REQUIRE_LLM: bool = True
+    AGENT_STARTUP_CHECK_LLM: bool = True
+    AGENT_STARTUP_PROBE_LLM: bool = True
+    AGENT_STARTUP_LLM_TIMEOUT_SECONDS: float = 8.0
 
     # Stock Data Providers
     TUSHARE_TOKEN: str = ""

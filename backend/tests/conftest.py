@@ -62,6 +62,7 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     db_path = tmp_path / "stocktracker_test.db"
     db_url = f"sqlite:///{db_path.as_posix()}"
     monkeypatch.setenv("DATABASE_URL", db_url)
+    monkeypatch.setenv("AGENT_REQUIRE_LLM", "false")
 
     from app.config import get_settings
 

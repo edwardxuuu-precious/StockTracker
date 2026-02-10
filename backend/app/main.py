@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .config import get_settings
 from .database import init_db
+from .services.llm_service import llm_runtime_info, probe_llm_connection
 from .api.v1 import portfolio
 from .api.v1 import holding
 from .api.v1 import telemetry
@@ -32,9 +33,38 @@ def _safe_log(message: str) -> None:
         pass
 
 
+def _validate_agent_llm_readiness() -> None:
+    """Fail fast at startup when agent LLM is required but unavailable."""
+    current = get_settings()
+    if not current.AGENT_STARTUP_CHECK_LLM:
+        _safe_log("[SKIP] Agent LLM startup check disabled")
+        return
+    if not current.AGENT_REQUIRE_LLM:
+        _safe_log("[SKIP] Agent LLM not required")
+        return
+
+    info = llm_runtime_info()
+    if not info["configured"]:
+        raise RuntimeError("Agent LLM is required but provider config is missing.")
+
+    if current.AGENT_STARTUP_PROBE_LLM:
+        ok, detail = probe_llm_connection(timeout_seconds=current.AGENT_STARTUP_LLM_TIMEOUT_SECONDS)
+        if not ok:
+            raise RuntimeError(f"Agent LLM probe failed: {detail}")
+        _safe_log(
+            f"[OK] Agent LLM probe passed provider={info['provider']} model={info['model']}"
+        )
+        return
+
+    _safe_log(
+        f"[OK] Agent LLM config ready provider={info['provider']} model={info['model']}"
+    )
+
+
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     """Initialize resources on startup and keep teardown hook available."""
+    _validate_agent_llm_readiness()
     init_db()
     _safe_log("[OK] Database initialized")
     yield

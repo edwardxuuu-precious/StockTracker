@@ -14,9 +14,36 @@ from ...schemas.chat import (
     ChatReplyResponse,
     ChatSessionResponse,
 )
+from ...services.llm_service import LLMUnavailableError
 from ...services.agent_service import generate_strategy_from_prompt
 
 router = APIRouter()
+
+
+def _looks_like_strategy_request(text: str) -> bool:
+    lower = (text or "").lower()
+    keywords = [
+        "策略",
+        "strategy",
+        "signal",
+        "买入",
+        "卖出",
+        "回测",
+        "优化",
+        "仓位",
+        "突破",
+        "均线",
+        "rsi",
+        "macd",
+        "boll",
+        "动量",
+        "止损",
+        "止盈",
+    ]
+    if any(token in lower for token in keywords):
+        return True
+    # Most free-form idea descriptions are longer than smalltalk.
+    return len((text or "").strip()) >= 16
 
 
 def _assistant_reply_for_prompt(db: Session, prompt: str) -> tuple[str, dict, int | None]:
@@ -24,8 +51,7 @@ def _assistant_reply_for_prompt(db: Session, prompt: str) -> tuple[str, dict, in
     if not normalized:
         return "请输入有效问题。", {}, None
 
-    lower = normalized.lower()
-    if any(token in lower for token in ["生成策略", "strategy", "rsi", "均线", "momentum"]):
+    if _looks_like_strategy_request(normalized):
         generated = generate_strategy_from_prompt(normalized)
         strategy = Strategy(
             name=f"Chat {generated.strategy_type} strategy",
@@ -111,7 +137,10 @@ async def post_message(
     db.add(user_message)
     db.flush()
 
-    reply_content, metadata, created_strategy_id = _assistant_reply_for_prompt(db, payload.content)
+    try:
+        reply_content, metadata, created_strategy_id = _assistant_reply_for_prompt(db, payload.content)
+    except LLMUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
     assistant_message = ChatMessage(
         session_id=session_id,
         role="assistant",

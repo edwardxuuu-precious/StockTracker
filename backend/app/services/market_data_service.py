@@ -95,20 +95,30 @@ def _upsert_bars(
     if not payload:
         return 0
 
-    stmt = sqlite_insert(model).values(payload)
-    update_cols = {
-        "open": stmt.excluded.open,
-        "high": stmt.excluded.high,
-        "low": stmt.excluded.low,
-        "close": stmt.excluded.close,
-        "volume": stmt.excluded.volume,
-    }
-    stmt = stmt.on_conflict_do_update(
-        index_elements=["instrument_id", "ts", "source"],
-        set_=update_cols,
-    )
-    result = db.execute(stmt)
-    return result.rowcount or len(payload)
+    # SQLite has a default limit of 999 variables per statement
+    # Each bar record has 9 fields, so batch size is limited to ~100 bars
+    BATCH_SIZE = 100
+    total_affected = 0
+
+    for batch_start in range(0, len(payload), BATCH_SIZE):
+        batch = payload[batch_start : batch_start + BATCH_SIZE]
+
+        stmt = sqlite_insert(model).values(batch)
+        update_cols = {
+            "open": stmt.excluded.open,
+            "high": stmt.excluded.high,
+            "low": stmt.excluded.low,
+            "close": stmt.excluded.close,
+            "volume": stmt.excluded.volume,
+        }
+        stmt = stmt.on_conflict_do_update(
+            index_elements=["instrument_id", "ts", "source"],
+            set_=update_cols,
+        )
+        result = db.execute(stmt)
+        total_affected += result.rowcount or len(batch)
+
+    return total_affected
 
 
 def _record_ingestion_meta(

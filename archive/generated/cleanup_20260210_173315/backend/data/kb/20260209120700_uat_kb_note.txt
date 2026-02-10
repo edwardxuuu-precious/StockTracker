@@ -1,0 +1,4 @@
+﻿Drawdown control checklist:
+1) Lower allocation_per_trade in volatile regimes.
+2) Prefer stable Sharpe strategies.
+3) Reduce overtrading frequency.

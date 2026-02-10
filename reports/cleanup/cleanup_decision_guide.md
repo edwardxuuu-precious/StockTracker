@@ -1,0 +1,142 @@
+# Cleanup Decision Guide
+
+- Generated from full inventory: `reports\cleanup\file_inventory_full.csv`
+- Total files inventoried: **30394**
+
+## Category Counts
+- `dependency`: 29709
+- `runtime_artifact`: 269
+- `cache`: 171
+- `backend_source`: 47
+- `frontend_source`: 39
+- `backend_script`: 21
+- `backend_test`: 21
+- `doc_qa`: 16
+- `doc_progress`: 12
+- `frontend_config`: 12
+- `benchmark_data`: 11
+- `backend_config`: 8
+- `ci_workflow`: 6
+- `benchmark`: 6
+- `root_config`: 4
+- `process_state`: 4
+- `doc_ops`: 4
+- `frontend_build`: 4
+- `analysis_report`: 4
+- `backend_env`: 2
+- `data`: 2
+- `invalid_file`: 2
+- `backend_doc`: 2
+- `runtime_db`: 2
+- `doc_handover`: 2
+- `doc_ops_record`: 2
+- `frontend_env`: 2
+- `frontend_misc`: 2
+- `frontend_asset`: 2
+- `tooling`: 1
+- `tmp_data`: 1
+- `runtime_config`: 1
+- `doc_log`: 1
+- `doc_template`: 1
+- `doc`: 1
+
+## Recommended Action Counts
+- `can_delete_regenerate`: 29713
+- `archive_or_delete`: 271
+- `can_delete_now`: 178
+- `keep`: 177
+- `keep_or_archive`: 27
+- `merge_review`: 13
+- `keep_temporarily`: 4
+- `merge_archive`: 3
+- `review_needed`: 2
+- `review`: 2
+- `archive_or_ignore`: 1
+- `keep_local_not_track`: 1
+- `archive`: 1
+- `keep_review`: 1
+
+## Action Examples
+- `archive_or_ignore` examples:
+  - `.claude\settings.local.json`
+- `keep` examples:
+  - `.github\workflows\ci.yml`
+  - `.github\workflows\kb-benchmark-monitor.yml`
+  - `.github\workflows\kb-monthly-checkpoint.yml`
+  - `.github\workflows\kb-weekly-review.yml`
+  - `.github\workflows\promotion-gate.yml`
+  - `.github\workflows\rollback-drill.yml`
+  - `.gitignore`
+  - `backend\app\__init__.py`
+- `can_delete_now` examples:
+  - `.pytest_cache\.gitignore`
+  - `.pytest_cache\CACHEDIR.TAG`
+  - `.pytest_cache\README.md`
+  - `.pytest_cache\v\cache\lastfailed`
+  - `.pytest_cache\v\cache\nodeids`
+  - `.pytest_cache\v\cache\stepwise`
+  - `backend\.pytest_cache\.gitignore`
+  - `backend\.pytest_cache\CACHEDIR.TAG`
+- `archive_or_delete` examples:
+  - `.runtime\acceptance\backend.err.log`
+  - `.runtime\acceptance\backend.out.log`
+  - `.runtime\acceptance\frontend.err.log`
+  - `.runtime\acceptance\frontend.out.log`
+  - `.runtime\acceptance\kb_upload_note.txt`
+  - `.runtime\acceptance\scheduler.err.log`
+  - `.runtime\acceptance\scheduler.out.log`
+  - `.runtime\ai_quality_tests_20260210_145843.log`
+- `merge_review` examples:
+  - `backend\.env`
+  - `backend\.env.example`
+  - `docs\Progress\Blueprint.md`
+  - `docs\Progress\Div_Progress_Goal1.md`
+  - `docs\Progress\Div_Todo_Goal2.md`
+  - `docs\Progress\Master_Plan.md`
+  - `docs\Progress\Master_Progress.md`
+  - `docs\Progress\ProjectCleanerSkill.md`
+- `keep_local_not_track` examples:
+  - `backend\config\ingestion_jobs.json`
+- `review_needed` examples:
+  - `backend\data\kb\20260209072920_kb_upload_note.txt`
+  - `backend\data\kb\20260209130407_f001_retest.json`
+- `keep_or_archive` examples:
+  - `backend\demo_process_management.bat`
+  - `backend\deploy-with-rollback.cmd`
+  - `backend\kb-monitor.cmd`
+  - `backend\kb-monthly-checkpoint.cmd`
+  - `backend\kb-review.cmd`
+  - `backend\release-gate.cmd`
+  - `backend\rollback-drill.cmd`
+  - `backend\SERVER_MANAGEMENT.md`
+- `archive` examples:
+  - `docs\Handover\CLAUDE_CODE_HANDOVER_2026-02-10.md`
+- `merge_archive` examples:
+  - `docs\Progress\Current_Backlog_2026-02-07.md`
+  - `docs\Progress\Current_Backlog_2026-02-08.md`
+  - `docs\Progress\Current_Backlog_2026-02-09.md`
+- `keep_review` examples:
+  - `docs\Runbook.md`
+- `review` examples:
+  - `frontend\check-config.bat`
+  - `frontend\nginx.conf`
+- `can_delete_regenerate` examples:
+  - `frontend\dist\assets\index-CAZpHyT1.css`
+  - `frontend\dist\assets\index-vFF_33Lc.js`
+  - `frontend\dist\index.html`
+  - `frontend\dist\vite.svg`
+  - `frontend\node_modules\.bin\acorn`
+  - `frontend\node_modules\.bin\acorn.cmd`
+  - `frontend\node_modules\.bin\acorn.ps1`
+  - `frontend\node_modules\.bin\autoprefixer`
+- `keep_temporarily` examples:
+  - `reports\cleanup\cleanup-report.json`
+  - `reports\cleanup\cleanup-report.md`
+  - `reports\cleanup\cleanup_decision_guide.md`
+  - `reports\cleanup\file_inventory_full.csv`
+
+## Key Simplification Proposals
+- Delete now: `__pycache__/`, `.pyc`, `.pytest_cache/`, stale `*.pid`, accidental `NUL` files.
+- Archive runtime evidence: `.runtime/**`, `backend/.runtime/**`, `backend/data/kb/**` (except truly needed seed data).
+- Keep source of truth docs, merge overlapping progress docs, archive historical handovers.
+- Keep only one dependency lock at each layer (`package-lock.json` root + frontend already present; verify necessity).

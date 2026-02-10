@@ -1,0 +1,3929 @@
+{
+  "root": "C:\\Users\\edwar\\Desktop\\StockTracker-main",
+  "generated_at": "2026-02-10 17:24:20",
+  "config": {
+    "similarity": 0.9,
+    "max_text_size": 200000,
+    "max_similarity_bytes": 50000,
+    "max_hash_size": 200000000,
+    "large_size": 20000000,
+    "excludes": [
+      ".DS_Store",
+      ".cache",
+      ".git",
+      ".hg",
+      ".idea",
+      ".next",
+      ".svn",
+      ".venv",
+      ".vscode",
+      "__pycache__",
+      "archive",
+      "build",
+      "coverage",
+      "dist",
+      "logs",
+      "node_modules",
+      "out",
+      "reports",
+      "target",
+      "temp",
+      "tmp",
+      "venv"
+    ]
+  },
+  "summary": {
+    "files_scanned": 518,
+    "duplicates_exact_groups": 19,
+    "duplicates_normalized_groups": 1,
+    "similar_pairs": 515,
+    "empty_files": 4,
+    "large_files": 0,
+    "errors": 0
+  },
+  "duplicates_exact": [
+    {
+      "hash": "66010b2d5251ceb97b800479ae1d91d08407773c0848443a8f1197cb0f984eed",
+      "size": 607,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "hash": "420e808d79a6c25d3cda0af33bc4782314a14949866682c68ce8149e89b66b70",
+      "size": 310,
+      "files": [
+        ".pytest_cache\\README.md",
+        "backend\\.pytest_cache\\README.md"
+      ]
+    },
+    {
+      "hash": "ce9a3838b2bee7bb64b0d1b07719d388dde043e6767539c4ba7ea64ad368a5d5",
+      "size": 285,
+      "files": [
+        ".runtime\\real_usage\\20260210_102051\\d301_ingest_US.json",
+        ".runtime\\real_usage\\20260210_102151\\d301_ingest_US.json"
+      ]
+    },
+    {
+      "hash": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "size": 191,
+      "files": [
+        ".pytest_cache\\CACHEDIR.TAG",
+        "backend\\.pytest_cache\\CACHEDIR.TAG"
+      ]
+    },
+    {
+      "hash": "465522f5b9813645720f5def0e7649e10e20ad1c6a1b0341ca735c6ff61ab575",
+      "size": 152,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "hash": "1b505934ba06ca283d0cb3311c626db8121d5d64cd392fbba85784be2899c88b",
+      "size": 142,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.txt",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.txt"
+      ]
+    },
+    {
+      "hash": "2a8ee3fa7007fe107b954f93f3f0c4c7c74a7c41953bfdc52ccbfbf35eb295eb",
+      "size": 126,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.json",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.json"
+      ]
+    },
+    {
+      "hash": "70572ebd250301c8ec422e964817d26691a0a0eb9f0fc4da8a6f3ed13ac2f1e8",
+      "size": 82,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "hash": "307559f2f9674c4d9296024c983ac16ac02319abe91179608236c9c4bcf8c905",
+      "size": 79,
+      "files": [
+        ".runtime\\acceptance\\kb_upload_note.txt",
+        "backend\\data\\kb\\20260209072920_kb_upload_note.txt"
+      ]
+    },
+    {
+      "hash": "8186d128a01e1400bdea48230b1cb203467f46815402cb405a83775cdcaf4a47",
+      "size": 72,
+      "files": [
+        "backend\\data\\kb\\20260209063402_acceptance.txt",
+        "backend\\data\\kb\\20260209063636_acceptance.txt",
+        "backend\\data\\kb\\20260209064148_acceptance.txt"
+      ]
+    },
+    {
+      "hash": "f3331a1ecf7253750b034af95a84a81ca3e3d760c6d1532b66fad4ef41d79cdb",
+      "size": 52,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\f001_retest.json",
+        "backend\\data\\kb\\20260209130407_f001_retest.json"
+      ]
+    },
+    {
+      "hash": "01ccbaf1622a0eef6e1a1be9a008a15f364ef68f670dcd7c31cdc03774d153f8",
+      "size": 51,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "hash": "e7c6bb30148cf667606dcd63e7ca77acaa3cfb0c8303bf09e6419e1e1669dc6d",
+      "size": 39,
+      "files": [
+        ".pytest_cache\\.gitignore",
+        "backend\\.pytest_cache\\.gitignore"
+      ]
+    },
+    {
+      "hash": "bb2a9248a269f0719e0dbd4136cdf2669eb2080ebf840eb42338f40aa695a30c",
+      "size": 35,
+      "files": [
+        "frontend\\.env",
+        "frontend\\.env.example"
+      ]
+    },
+    {
+      "hash": "0aed8e3e679f6cc8945c8e94f79fa56fd9fed224c89f112bbe59b8751d5d9dca",
+      "size": 26,
+      "files": [
+        "backend\\data\\kb\\20260209064206_acceptance.txt",
+        "backend\\data\\kb\\20260209064223_acceptance.txt",
+        "backend\\data\\kb\\20260209064303_acceptance.txt"
+      ]
+    },
+    {
+      "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "files": [
+        ".pytest_cache\\v\\cache\\lastfailed",
+        "backend\\.pytest_cache\\v\\cache\\lastfailed"
+      ]
+    },
+    {
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "size": 2,
+      "files": [
+        ".pytest_cache\\v\\cache\\stepwise",
+        "backend\\.pytest_cache\\v\\cache\\stepwise"
+      ]
+    },
+    {
+      "hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1,
+      "files": [
+        "backend\\app\\__init__.py",
+        "backend\\app\\api\\__init__.py",
+        "backend\\app\\api\\v1\\__init__.py",
+        "backend\\app\\schemas\\__init__.py",
+        "backend\\app\\services\\__init__.py"
+      ]
+    },
+    {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "files": [
+        ".runtime\\acceptance\\frontend.err.log",
+        ".runtime\\uat\\20260209_195743\\start_test.log",
+        "NUL",
+        "backend\\NUL"
+      ]
+    }
+  ],
+  "duplicates_normalized": [
+    {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "files": [
+        ".runtime\\acceptance\\frontend.err.log",
+        ".runtime\\uat\\20260209_195743\\start_test.log",
+        "NUL",
+        "backend\\NUL",
+        "backend\\app\\__init__.py",
+        "backend\\app\\api\\__init__.py",
+        "backend\\app\\api\\v1\\__init__.py",
+        "backend\\app\\schemas\\__init__.py",
+        "backend\\app\\services\\__init__.py"
+      ]
+    }
+  ],
+  "similar_pairs": [
+    {
+      "ratio": 1.0,
+      "files": [
+        ".pytest_cache\\v\\cache\\lastfailed",
+        "backend\\.pytest_cache\\v\\cache\\lastfailed"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".pytest_cache\\v\\cache\\stepwise",
+        "backend\\.pytest_cache\\v\\cache\\stepwise"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064206_acceptance.txt",
+        "backend\\data\\kb\\20260209064223_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064206_acceptance.txt",
+        "backend\\data\\kb\\20260209064303_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064223_acceptance.txt",
+        "backend\\data\\kb\\20260209064303_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "frontend\\.env",
+        "frontend\\.env.example"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".pytest_cache\\.gitignore",
+        "backend\\.pytest_cache\\.gitignore"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209064716_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209064837_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209064928_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209075447_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064513_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209064837_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209064928_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209075447_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064716_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209064928_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209075447_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064837_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209075447_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209064928_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209075458_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075447_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209080208_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209075458_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209080217_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080208_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209080332_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080217_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209081118_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209080332_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209081503_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081118_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209081540_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081503_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209081558_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081540_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082325_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209081558_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082325_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209082423_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082354_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209082451_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082423_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209082508_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082451_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209083957_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209082508_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209084020_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209083957_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209084647_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084020_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085151_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209084647_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209085222_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085151_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209085252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085222_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209085520_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085252_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209085603_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085520_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209093505_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209085603_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209093708_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093505_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209102029_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209093708_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209102048_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102029_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209102252_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102048_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209103443_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209102252_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209103501_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103443_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209104156_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209103501_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209104408_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104156_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209104428_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104408_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209111158_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209104428_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209111218_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111158_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209112300_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209111218_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209112320_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112300_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209113348_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209112320_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209113405_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113348_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260209115927_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209113405_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260209121043_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209115927_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260209121103_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121043_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260209130418_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209121103_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210033813_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209130418_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210034838_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210033813_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210040517_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210034838_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210081700_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210040517_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210081816_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081700_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081816_kb-note.txt",
+        "backend\\data\\kb\\20260210081929_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081816_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081816_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081816_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081929_kb-note.txt",
+        "backend\\data\\kb\\20260210082354_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081929_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210081929_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210082354_kb-note.txt",
+        "backend\\data\\kb\\20260210082659_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210082354_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210082659_kb-note.txt",
+        "backend\\data\\kb\\20260210083553_kb-note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\f001_retest.json",
+        "backend\\data\\kb\\20260209130407_f001_retest.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209063402_acceptance.txt",
+        "backend\\data\\kb\\20260209063636_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209063402_acceptance.txt",
+        "backend\\data\\kb\\20260209064148_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209063636_acceptance.txt",
+        "backend\\data\\kb\\20260209064148_acceptance.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\acceptance\\kb_upload_note.txt",
+        "backend\\data\\kb\\20260209072920_kb_upload_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120736_uat_kb_note.json",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.json",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.json"
+      ]
+    },
+    {
+      "ratio": 0.9581,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\search_req_fts.json",
+        ".runtime\\real_usage\\20260210_101228\\search_req_hybrid.json"
+      ]
+    },
+    {
+      "ratio": 0.9674,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\search_req_fts.json",
+        ".runtime\\real_usage\\20260210_101228\\search_req_vector.json"
+      ]
+    },
+    {
+      "ratio": 0.9541,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\search_req_hybrid.json",
+        ".runtime\\real_usage\\20260210_101228\\search_req_vector.json"
+      ]
+    },
+    {
+      "ratio": 0.962,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\search_req_fts.json",
+        ".runtime\\real_usage\\20260210_101134\\search_req_hybrid.json"
+      ]
+    },
+    {
+      "ratio": 0.9705,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\search_req_fts.json",
+        ".runtime\\real_usage\\20260210_101134\\search_req_vector.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.txt",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.txt"
+      ]
+    },
+    {
+      "ratio": 0.9583,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\search_req_hybrid.json",
+        ".runtime\\real_usage\\20260210_101134\\search_req_vector.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120736_uat_kb_note.txt",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.txt"
+      ]
+    },
+    {
+      "ratio": 0.9377,
+      "files": [
+        "backend\\rollback-drill.cmd",
+        "backend\\kb-review.cmd"
+      ]
+    },
+    {
+      "ratio": 0.9297,
+      "files": [
+        "backend\\rollback-drill.cmd",
+        "backend\\kb-monitor.cmd"
+      ]
+    },
+    {
+      "ratio": 0.9134,
+      "files": [
+        "backend\\rollback-drill.cmd",
+        "backend\\kb-monthly-checkpoint.cmd"
+      ]
+    },
+    {
+      "ratio": 0.9707,
+      "files": [
+        "backend\\kb-review.cmd",
+        "backend\\kb-monitor.cmd"
+      ]
+    },
+    {
+      "ratio": 0.9482,
+      "files": [
+        "backend\\kb-review.cmd",
+        "backend\\kb-monthly-checkpoint.cmd"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".pytest_cache\\CACHEDIR.TAG",
+        "backend\\.pytest_cache\\CACHEDIR.TAG"
+      ]
+    },
+    {
+      "ratio": 0.9612,
+      "files": [
+        "backend\\kb-monitor.cmd",
+        "backend\\kb-monthly-checkpoint.cmd"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_102051\\d301_ingest_US.json",
+        ".runtime\\real_usage\\20260210_102151\\d301_ingest_US.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".pytest_cache\\README.md",
+        "backend\\.pytest_cache\\README.md"
+      ]
+    },
+    {
+      "ratio": 0.9273,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-H-004_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-H-001_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9193,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-H-003_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-H-001_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9015,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-H-003_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-H-002_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9499,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-H-001_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-H-002_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9831,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-C-003_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-C-001_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9087,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\UAT-D-004_result.json",
+        ".runtime\\uat\\20260209_195743\\UAT-D-001_result.json"
+      ]
+    },
+    {
+      "ratio": 0.9501,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\g_heartbeat.json",
+        ".runtime\\uat\\20260209_195743\\g_fail_heartbeat.json"
+      ]
+    },
+    {
+      "ratio": 0.9087,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\g_reports\\cycle_20260209T120940Z.json",
+        ".runtime\\uat\\scheduler_reports\\cycle_20260209T103316Z.json"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101112\\ru_d2_01_kb_note_20260210_101112.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101134\\ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\real_usage\\20260210_101228\\ru_d2_01_kb_note_20260210_101228.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf",
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        ".runtime\\uat\\20260209_195743\\uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120700_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260209120736_uat_kb_note.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 1.0,
+      "files": [
+        "backend\\data\\kb\\20260210021134_ru_d2_01_kb_note_20260210_101134.pdf",
+        "backend\\data\\kb\\20260210021228_ru_d2_01_kb_note_20260210_101228.pdf"
+      ]
+    },
+    {
+      "ratio": 0.9675,
+      "files": [
+        ".runtime\\real_usage\\20260210_102151\\d303_backtest_variant_req.json",
+        ".runtime\\real_usage\\20260210_102151\\d303_backtest_baseline_req.json"
+      ]
+    },
+    {
+      "ratio": 0.9549,
+      "files": [
+        ".runtime\\ai_quality_tests_20260210_145843.log",
+        ".runtime\\ai_quality_tests_evidence.log"
+      ]
+    },
+    {
+      "ratio": 0.9945,
+      "files": [
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T103341Z.json",
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T103430Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9908,
+      "files": [
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T103341Z.json",
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T121119Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9908,
+      "files": [
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T103430Z.json",
+        ".runtime\\rollback_drills\\deploy_report_staging_20260209T121119Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9902,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T111137Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9919,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112125Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9908,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9006,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T111137Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9948,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112125Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.96,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\monitor_20260209T112132Z.json",
+        ".runtime\\kb_benchmark_history\\staging\\monitor_20260209T111422Z.json"
+      ]
+    },
+    {
+      "ratio": 0.928,
+      "files": [
+        "backend\\.runtime\\benchmarks\\agent_benchmark_20260210_150947.json",
+        "backend\\.runtime\\benchmarks\\agent_benchmark_20260210_150821.json"
+      ]
+    },
+    {
+      "ratio": 0.9838,
+      "files": [
+        ".runtime\\release_gate_prod_kb_required_defaultcases_smoke.json",
+        ".runtime\\release_gate_prod_threshold_check.json"
+      ]
+    },
+    {
+      "ratio": 0.9983,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111137Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9986,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112125Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9979,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9924,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111054Z.json",
+        ".runtime\\kb_benchmark_history\\staging\\benchmark_20260209T111422Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9986,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111137Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112125Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9983,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111137Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9922,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T111137Z.json",
+        ".runtime\\kb_benchmark_history\\staging\\benchmark_20260209T111422Z.json"
+      ]
+    },
+    {
+      "ratio": 0.999,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112125Z.json",
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112132Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9922,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112125Z.json",
+        ".runtime\\kb_benchmark_history\\staging\\benchmark_20260209T111422Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9927,
+      "files": [
+        ".runtime\\kb_benchmark_history\\prod\\benchmark_20260209T112132Z.json",
+        ".runtime\\kb_benchmark_history\\staging\\benchmark_20260209T111422Z.json"
+      ]
+    },
+    {
+      "ratio": 0.9091,
+      "files": [
+        "backend\\.runtime\\benchmarks\\agent_benchmark_fixed_20260210.json",
+        "backend\\.runtime\\benchmarks\\agent_benchmark_full_20260210.json"
+      ]
+    }
+  ],
+  "empty_files": [
+    ".runtime\\acceptance\\frontend.err.log",
+    ".runtime\\uat\\20260209_195743\\start_test.log",
+    "NUL",
+    "backend\\NUL"
+  ],
+  "large_files": [],
+  "by_extension": {
+    "": 16,
+    ".bat": 3,
+    ".cjs": 1,
+    ".cmd": 9,
+    ".conf": 1,
+    ".css": 1,
+    ".csv": 3,
+    ".db": 3,
+    ".example": 2,
+    ".html": 1,
+    ".js": 23,
+    ".json": 173,
+    ".jsx": 18,
+    ".log": 20,
+    ".md": 49,
+    ".pdf": 8,
+    ".pid": 4,
+    ".py": 85,
+    ".sqlite3": 1,
+    ".svg": 2,
+    ".tag": 2,
+    ".txt": 86,
+    ".yml": 7
+  },
+  "skipped_hash": [],
+  "errors": []
+}

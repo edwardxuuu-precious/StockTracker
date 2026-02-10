@@ -233,6 +233,84 @@ def _resolve_kb_benchmark_mode(profile: str, mode: str) -> str:
     return "off"
 
 
+def _resolve_agent_health_mode(profile: str, mode: str) -> str:
+    normalized = (mode or "auto").strip().lower()
+    if normalized != "auto":
+        return normalized
+    if profile == "prod":
+        return "required"
+    if profile == "staging":
+        return "optional"
+    return "off"
+
+
+def _check_agent_health(profile: str, args: argparse.Namespace) -> CheckResult:
+    started = time.time()
+    mode = _resolve_agent_health_mode(profile, str(getattr(args, "agent_health_mode", "auto") or "auto"))
+    if mode == "off":
+        return CheckResult(
+            name="agent-health",
+            status="pass",
+            duration_seconds=round(time.time() - started, 3),
+            details="skipped (mode=off)",
+        )
+
+    base_url = str(getattr(args, "agent_health_url", "") or "").strip()
+    if not base_url:
+        elapsed = round(time.time() - started, 3)
+        if mode == "optional":
+            return CheckResult(
+                name="agent-health",
+                status="pass",
+                duration_seconds=elapsed,
+                details="optional check skipped, base URL missing",
+            )
+        return CheckResult(
+            name="agent-health",
+            status="fail",
+            duration_seconds=elapsed,
+            details="required base URL missing; set --agent-health-url",
+        )
+
+    cmd = [
+        sys.executable,
+        "backend/scripts/check_agent_health.py",
+        "--base-url",
+        base_url,
+        "--timeout-seconds",
+        str(getattr(args, "agent_health_timeout_seconds", 10.0)),
+    ]
+    if bool(getattr(args, "agent_health_probe", True)):
+        cmd.append("--probe")
+
+    result = _run_command(
+        name="agent-health",
+        cmd=cmd,
+        cwd=PROJECT_ROOT,
+        timeout_seconds=120,
+    )
+    if result.status == "pass":
+        result.details = (
+            f"mode={mode} passed; base_url={base_url}; "
+            f"probe={bool(getattr(args, 'agent_health_probe', True))}"
+        )
+        return result
+
+    if mode == "optional":
+        result.status = "pass"
+        result.details = (
+            f"mode={mode} non-blocking failure: {result.details}; "
+            f"base_url={base_url}; probe={bool(getattr(args, 'agent_health_probe', True))}"
+        )
+        return result
+
+    result.details = (
+        f"mode={mode} failed: {result.details}; "
+        f"base_url={base_url}; probe={bool(getattr(args, 'agent_health_probe', True))}"
+    )
+    return result
+
+
 def _resolve_policy_path(raw_path: str | None) -> Path | None:
     path_value = (raw_path or "").strip()
     if not path_value:
@@ -382,6 +460,7 @@ def _build_checks(profile: str, args: argparse.Namespace) -> list[CheckResult]:
     results.append(_check_required_files())
     results.append(_check_env_policy(profile, env))
     results.append(_check_git_clean(args.allow_dirty_git))
+    results.append(_check_agent_health(profile, args))
 
     if args.skip_tests:
         results.append(
@@ -525,6 +604,29 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=None,
         help="Minimum average keyword recall. If omitted, use policy/default value.",
+    )
+    parser.add_argument(
+        "--agent-health-mode",
+        choices=["auto", "off", "optional", "required"],
+        default="auto",
+        help="Agent health check mode. auto => dev/off, staging/optional, prod/required.",
+    )
+    parser.add_argument(
+        "--agent-health-url",
+        default="",
+        help="Agent service base URL, e.g. http://localhost:8000. Required when mode=required.",
+    )
+    parser.add_argument(
+        "--agent-health-probe",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use live LLM probe for agent health check.",
+    )
+    parser.add_argument(
+        "--agent-health-timeout-seconds",
+        type=float,
+        default=10.0,
+        help="Timeout for agent health HTTP request.",
     )
     parser.add_argument("--output", default="", help="Output JSON report path")
     parser.add_argument("--print-json", action="store_true")

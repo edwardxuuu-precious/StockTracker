@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, time, timezone
 import math
 import statistics
-from typing import Any
+from typing import Any, Callable
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
@@ -76,9 +76,19 @@ def _signal_for_strategy(
     strategy_type: str,
     history: list[float],
     parameters: dict[str, Any],
+    custom_signal: Callable[[list[float], dict[str, Any]], str] | None = None,
 ) -> str:
     strategy = (strategy_type or "").strip().lower()
     price = history[-1]
+
+    if strategy == "custom":
+        if not custom_signal:
+            return "HOLD"
+        try:
+            raw_signal = str(custom_signal(history, parameters)).strip().upper()
+        except Exception:
+            return "HOLD"
+        return raw_signal if raw_signal in {"BUY", "SELL", "HOLD"} else "HOLD"
 
     if strategy == "rsi":
         period = int(parameters.get("rsi_period", 14))
@@ -116,6 +126,27 @@ def _signal_for_strategy(
     if short_ma < long_ma * 0.9999:
         return "SELL"
     return "HOLD"
+
+
+def _compile_custom_signal(code: str) -> Callable[[list[float], dict[str, Any]], str]:
+    safe_builtins = {
+        "abs": abs,
+        "min": min,
+        "max": max,
+        "sum": sum,
+        "len": len,
+        "range": range,
+        "float": float,
+        "int": int,
+        "round": round,
+    }
+    globals_dict: dict[str, Any] = {"__builtins__": safe_builtins, "math": math}
+    locals_dict: dict[str, Any] = {}
+    exec(code, globals_dict, locals_dict)
+    fn = locals_dict.get("signal") or globals_dict.get("signal")
+    if not callable(fn):
+        raise ValueError("custom strategy code must define callable signal(prices, params)")
+    return fn
 
 
 def _resolve_market_for_symbol(symbol: str, parameters: dict[str, Any]) -> str | None:
@@ -248,6 +279,14 @@ def _run_backtest_local(
     trade_events: list[dict[str, Any]] = []
     closed_trade_pnls: list[float] = []
     equity_curve: list[dict[str, Any]] = []
+    custom_signal: Callable[[list[float], dict[str, Any]], str] | None = None
+    if (strategy.strategy_type or "").strip().lower() == "custom":
+        if not strategy.code:
+            raise HTTPException(status_code=400, detail="Custom strategy requires code")
+        try:
+            custom_signal = _compile_custom_signal(strategy.code)
+        except Exception as exc:
+            raise HTTPException(status_code=400, detail=f"Invalid custom strategy code: {exc}") from exc
 
     for ts in timeline:
         for symbol in symbols:
@@ -267,7 +306,12 @@ def _run_backtest_local(
             price = last_price[symbol]
             if price is None:
                 continue
-            signal = _signal_for_strategy(strategy.strategy_type, history[symbol], parameters)
+            signal = _signal_for_strategy(
+                strategy.strategy_type,
+                history[symbol],
+                parameters,
+                custom_signal=custom_signal,
+            )
             quantity = positions[symbol]
 
             if signal == "BUY" and quantity <= 1e-8:
