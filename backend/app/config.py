@@ -44,9 +44,9 @@ class Settings(BaseSettings):
     KB_MIN_SCORE: float = 0.08
     KB_MAX_PER_DOCUMENT: int = 2
     KB_ALLOW_FALLBACK_CITATIONS: bool = True
-    KB_ALLOWED_SOURCE_TYPES: list[str] = ["pdf", "txt", "json"]
+    KB_ALLOWED_SOURCE_TYPES: list[str] = ["pdf", "txt", "text", "json"]
     KB_BLOCKED_SOURCE_KEYWORDS: list[str] = []
-    KB_PREFERRED_SOURCE_TYPES: list[str] = ["pdf", "txt", "json"]
+    KB_PREFERRED_SOURCE_TYPES: list[str] = ["pdf", "txt", "text", "json"]
     KB_RECENCY_HALF_LIFE_DAYS: int = 180
     KB_POLICY_PROFILE: str = "balanced"
 

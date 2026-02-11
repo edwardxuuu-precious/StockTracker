@@ -1,1 +1,0 @@
-Moving average strategies should validate drawdown and sharpe stability.

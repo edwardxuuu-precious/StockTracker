@@ -277,7 +277,7 @@ def _csv_for_trades(trades: list[PortfolioTrade]) -> str:
 @router.get("/portfolios/{portfolio_id}/export")
 async def export_portfolio_analytics_csv(
     portfolio_id: int,
-    report: Literal["summary", "holdings", "trades"] = Query("summary"),
+    report_type: Literal["summary", "holdings", "trades"] = Query("summary", alias="report_type"),
     db: Session = Depends(get_db),
 ):
     portfolio = _get_portfolio_or_404(db, portfolio_id)
@@ -296,13 +296,16 @@ async def export_portfolio_analytics_csv(
     summary = _build_summary(db, portfolio, holdings, trades)
     exported_at = datetime.now(timezone.utc)
 
-    if report == "summary":
+    # DEBUG: Log the received report_type
+    print(f"[DEBUG] export_portfolio_analytics_csv: report_type={report_type!r}")
+
+    if report_type == "summary":
         csv_content = _csv_for_summary(summary, exported_at)
-    elif report == "holdings":
+    elif report_type == "holdings":
         csv_content = _csv_for_holdings(_build_allocation(holdings), exported_at)
     else:
         csv_content = _csv_for_trades(trades)
 
-    filename = f"portfolio_{portfolio_id}_{report}.csv"
+    filename = f"portfolio_{portfolio_id}_{report_type}.csv"
     headers = {"Content-Disposition": f'attachment; filename="{filename}"'}
     return Response(content=csv_content, media_type="text/csv; charset=utf-8", headers=headers)

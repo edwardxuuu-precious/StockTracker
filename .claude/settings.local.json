@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venvScriptspython -m pytest backend/tests -q)",
+      "Bash(npm run lint)",
+      "Bash(npm run test:unit:*)",
+      "Bash(venv/Scripts/python -m pytest backend/tests -q)",
+      "Bash(test:*)",
+      "Bash(cmd /c start-all.bat)",
+      "Bash(cmd /c backendstart-backend.cmd)",
+      "Bash(venv/Scripts/python backend/start_server.py --port 8001 --force)",
+      "Bash(VITE_API_URL=http://localhost:8001 npm run dev:*)",
+      "Bash(venv/Scripts/python backend/start_server.py --port 8001)",
+      "Bash(cmd /c \"taskkill /F /PID 20876\")",
+      "Bash(..\\\\venv\\\\Scripts\\\\python -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload)",
+      "Bash(../venv/Scripts/python.exe:*)"
+    ]
+  }
+}
