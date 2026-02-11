@@ -119,7 +119,6 @@ async def search_kb(payload: KnowledgeSearchRequest, db: Session = Depends(get_d
     ensure_kb_schema(db.get_bind())
     settings = get_settings()
     policy = resolve_governance_policy(payload.policy_profile or settings.KB_POLICY_PROFILE)
-    print(f"[DEBUG] KB search: query={payload.query!r}, mode={payload.mode}, top_k={payload.top_k}, policy={policy.name}, min_score={policy.min_score}")
     hits = search_knowledge_base(
         db,
         payload.query,
@@ -149,7 +148,6 @@ async def search_kb(payload: KnowledgeSearchRequest, db: Session = Depends(get_d
         preferred_source_types=settings.KB_PREFERRED_SOURCE_TYPES,
         recency_half_life_days=settings.KB_RECENCY_HALF_LIFE_DAYS,
     )
-    print(f"[DEBUG] KB search returned {len(hits)} hits")
     return KnowledgeSearchResponse(
         query=payload.query,
         hits=[

@@ -9,8 +9,8 @@
 
 | Defect ID | 关联用例 | 严重级别 | 状态 | 阻塞放行 |
 |-----------|---------|---------|------|---------|
-| BUG-UAT-001 | ANA-002 | P0 | Open | ✅ YES |
-| BUG-UAT-002 | KB-002 | P0 | Open | ✅ YES |
+| BUG-UAT-001 | ANA-002 | P0 | Fixed → Closed | ✅ YES |
+| BUG-UAT-002 | KB-002 | P0 | Fixed → Closed | ✅ YES |
 | BUG-UAT-003 | AG-004 | P0 | Open | ⚠️ External Dependency |
 
 ---
