@@ -14,8 +14,8 @@ from ...schemas.chat import (
     ChatReplyResponse,
     ChatSessionResponse,
 )
-from ...services.llm_service import LLMUnavailableError
 from ...services.agent_service import generate_strategy_from_prompt
+from ...services.llm_service import LLMUnavailableError
 
 router = APIRouter()
 
@@ -80,7 +80,7 @@ def _assistant_reply_for_prompt(db: Session, prompt: str) -> tuple[str, dict, in
 
         content = (
             f"已生成策略 `{strategy.name}`（type={generated.strategy_type}）。\n"
-            "你可以在策略页直接运行回测，或用 Agent 调参接口继续优化。"
+            "你可以在策略页面直接运行回测，或使用 Agent 调参接口继续优化。"
         )
         meta = {
             "intent": "generate_strategy",
@@ -159,3 +159,4 @@ async def post_message(
         user_message=ChatMessageResponse.model_validate(user_message),
         assistant_message=ChatMessageResponse.model_validate(assistant_message),
     )
+

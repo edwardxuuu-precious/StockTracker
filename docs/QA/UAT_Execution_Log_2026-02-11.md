@@ -138,7 +138,7 @@
 
 - 本执行日志: `docs/QA/UAT_Execution_Log_2026-02-11.md`
 - 缺陷台账: `docs/QA/UAT_Defects_2026-02-11.md`
-- 复测计划: `docs/QA/UAT_Retest_Plan_2026-02-11.md`
+- 复测计划: `archive/obsolete/docs_cleanup_20260211/QA/UAT_Retest_Plan_2026-02-11.md`
 - 后端日志: Backend task output file bd74fcc.output
 - 前端日志: Frontend task output file b7a0f9d.output
 

@@ -1,6 +1,6 @@
 # Progress Update Workflow
 
-Last updated: `2026-02-10`
+Last updated: `2026-02-11`
 
 Use this workflow after each development session.
 
@@ -11,7 +11,7 @@ Use this workflow after each development session.
 - If release-related changes: `python backend/scripts/release_gate.py --profile dev --skip-docker --allow-dirty-git`
 
 2. Update active QA execution log.
-- File: `docs/QA/UAT_RealUsage_Log_2026-02.md`
+- File: `docs/QA/UAT_Execution_Log_2026-02-11.md`
 - Update latest run results and evidence paths.
 
 3. Update actionable backlog.
@@ -39,4 +39,5 @@ Use this workflow after each development session.
 When resuming from another device:
 1. Read `docs/HANDOFF_TO_CODEX_2026-02-10.md`
 2. Read `docs/Progress/Current_Backlog_2026-02-09.md`
-3. Execute the `Next Action` of the highest-priority `in_progress` task
+3. Read `docs/QA/README.md`
+4. Execute the `Next Action` of the highest-priority `in_progress` task

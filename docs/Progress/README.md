@@ -11,8 +11,8 @@ This folder now keeps only the minimal progress documents needed for daily work.
 - `docs/HANDOFF_TO_CODEX_2026-02-10.md`: current full handoff and project snapshot.
 
 ## Archived In Round 2
-The following historical progress files were moved to:
-`archive/obsolete/docs_round2_20260210_183405/docs/Progress/`
+Historical progress files are moved to:
+`archive/obsolete/`
 
 - `Blueprint.md`
 - `Current_Backlog_2026-02-07.md`

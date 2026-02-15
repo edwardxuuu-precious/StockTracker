@@ -49,6 +49,7 @@ env/
 logs/
 *.pid
 .runtime/
+backend/.server_*.pid
 
 # Runtime data
 backend/data/kb/
@@ -59,6 +60,8 @@ backend/config/ingestion_jobs.json
 .pytest_cache/
 .coverage
 htmlcov/
+.mypy_cache/
+.ruff_cache/
 
 # Frontend
 node_modules/
@@ -66,6 +69,7 @@ dist/
 build/
 .next/
 .cache/
+.vite/
 # Windows reserved device-path noise
 NUL
 backend/NUL

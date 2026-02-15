@@ -277,7 +277,8 @@ def _csv_for_trades(trades: list[PortfolioTrade]) -> str:
 @router.get("/portfolios/{portfolio_id}/export")
 async def export_portfolio_analytics_csv(
     portfolio_id: int,
-    report_type: Literal["summary", "holdings", "trades"] = Query("summary", alias="report_type"),
+    report_type: Literal["summary", "holdings", "trades"] | None = Query(None, alias="report_type"),
+    report: Literal["summary", "holdings", "trades"] | None = Query(None, alias="report"),
     db: Session = Depends(get_db),
 ):
     portfolio = _get_portfolio_or_404(db, portfolio_id)
@@ -296,16 +297,20 @@ async def export_portfolio_analytics_csv(
     summary = _build_summary(db, portfolio, holdings, trades)
     exported_at = datetime.now(timezone.utc)
 
-    # DEBUG: Log the received report_type
-    print(f"[DEBUG] export_portfolio_analytics_csv: report_type={report_type!r}")
+    effective_report_type = report_type or report or "summary"
+    if report_type and report and report_type != report:
+        raise HTTPException(
+            status_code=400,
+            detail="Conflicting query params: report and report_type must match when both are provided.",
+        )
 
-    if report_type == "summary":
+    if effective_report_type == "summary":
         csv_content = _csv_for_summary(summary, exported_at)
-    elif report_type == "holdings":
+    elif effective_report_type == "holdings":
         csv_content = _csv_for_holdings(_build_allocation(holdings), exported_at)
     else:
         csv_content = _csv_for_trades(trades)
 
-    filename = f"portfolio_{portfolio_id}_{report_type}.csv"
+    filename = f"portfolio_{portfolio_id}_{effective_report_type}.csv"
     headers = {"Content-Disposition": f'attachment; filename="{filename}"'}
     return Response(content=csv_content, media_type="text/csv; charset=utf-8", headers=headers)

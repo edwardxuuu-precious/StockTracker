@@ -90,6 +90,8 @@ class AgentReportResponse(BaseModel):
     quantitative_recommendations: list[AgentRecommendation]
     qualitative_recommendations: list[AgentRecommendation]
     citations: list[AgentCitation]
+    fallback_used: bool = False
+    fallback_reason: str | None = None
 
 
 class AgentHealthResponse(BaseModel):

@@ -97,6 +97,8 @@ def test_agent_generate_tune_and_report(client):
     report_body = report.json()
     assert report_body["backtest_id"] == body["best_trial"]["backtest_id"]
     assert "Recommendations" in report_body["markdown"]
+    assert "fallback_used" in report_body
+    assert "fallback_reason" in report_body
 
 
 def test_agent_health_config_only_optional_mode(client):
@@ -142,3 +144,56 @@ def test_agent_health_probe_success(client, monkeypatch):
         assert body["detail"] == "reachable"
     finally:
         get_settings.cache_clear()
+
+
+def test_agent_report_uses_deterministic_fallback_when_llm_unavailable(client, monkeypatch):
+    from app.api.v1 import agent as agent_api
+    from app.database import SessionLocal
+    from app.services.llm_service import LLMUnavailableError
+
+    db = SessionLocal()
+    try:
+        _seed_us_daily_bars("AAPL", 1, db)
+        db.commit()
+    finally:
+        db.close()
+
+    generated = client.post(
+        "/api/v1/agent/strategy/generate",
+        json={"prompt": "create MA strategy", "name": "Agent MA Fallback"},
+    )
+    assert generated.status_code == 200
+    strategy_id = generated.json()["strategy"]["id"]
+
+    tuned = client.post(
+        "/api/v1/agent/strategy/tune",
+        json={
+            "strategy_id": strategy_id,
+            "symbols": ["AAPL"],
+            "start_date": "2025-01-01",
+            "end_date": "2025-01-08",
+            "initial_capital": 100000,
+            "market": "US",
+            "interval": "1d",
+            "max_trials": 2,
+            "top_k": 1,
+            "parameter_grid": {"short_window": [3], "long_window": [8]},
+        },
+    )
+    assert tuned.status_code == 200
+    backtest_id = tuned.json()["best_trial"]["backtest_id"]
+
+    def _raise_unavailable(*args, **kwargs):
+        raise LLMUnavailableError("Request timed out")
+
+    monkeypatch.setattr(agent_api, "build_ai_backtest_insights", _raise_unavailable)
+
+    report = client.post(
+        f"/api/v1/agent/backtests/{backtest_id}/report",
+        json={"question": "reduce drawdown", "top_k_sources": 2},
+    )
+    assert report.status_code == 200
+    payload = report.json()
+    assert payload["fallback_used"] is True
+    assert "Request timed out" in payload["fallback_reason"]
+    assert "AI Insights (Fallback)" in payload["markdown"]

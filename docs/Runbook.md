@@ -1,13 +1,14 @@
 # StockTracker Runbook
 
-Last updated: `2026-02-10`
+Last updated: `2026-02-11`
 
 ## Quick Start
 
-1. Backend: `backend/start-backend.cmd`
-2. Frontend: `frontend/start-frontend.cmd`
-3. Scheduler (optional): `backend/start-scheduler.cmd`
-4. Docker stack (optional): `docker-compose up --build`
+1. Full local stack (Windows): `start-all.cmd` (`start-all.bat` is compatibility wrapper)
+2. Backend only: `backend/start-backend.cmd`
+3. Frontend only: `frontend/start-frontend.cmd`
+4. Scheduler (optional): `backend/start-scheduler.cmd`
+5. Docker stack (optional): `docker-compose up --build`
 
 ## Environment and Dependency Rebuild
 
@@ -26,6 +27,7 @@ cd frontend
 npm ci
 npm run lint
 npm run test:unit
+npm run build
 ```
 
 ## Frontend `.env` Rule
@@ -66,6 +68,17 @@ Search:
 - Generate strategy: `POST /api/v1/agent/strategy/generate`
 - Tune strategy: `POST /api/v1/agent/strategy/tune`
 - Build backtest report: `POST /api/v1/agent/backtests/{backtest_id}/report`
+  - When LLM is unavailable, endpoint returns deterministic fallback with `fallback_used=true` and `fallback_reason`.
+
+Agent LLM reliability env vars:
+- `AGENT_LLM_TIMEOUT_SECONDS` (default `90.0`)
+- `AGENT_LLM_MAX_RETRIES` (default `3`)
+- `AGENT_LLM_RETRY_BASE_SECONDS` (default `1.0`)
+- `AGENT_LLM_RETRY_MAX_SECONDS` (default `8.0`)
+
+Agent report telemetry:
+- `GET /api/v1/telemetry/agent-report-metrics?window=200`
+- Returns `success_rate`, `p95_latency_ms`, `fallback_ratio`, `timeout_rate`.
 
 ## Strategy Versions
 
@@ -78,6 +91,8 @@ Search:
 - Dev gate: `python backend/scripts/release_gate.py --profile dev`
 - Staging gate: `python backend/scripts/release_gate.py --profile staging --skip-docker`
 - Prod gate: `python backend/scripts/release_gate.py --profile prod --docker-build`
+- Local docs link check: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-doc-links.ps1`
+- Local cleanup helper: `scripts/clean-local.cmd` (deep cleanup: `scripts/clean-local.cmd -Deep`)
 
 Related docs:
 - `docs/Ops/Release_Governance.md`
@@ -85,11 +100,8 @@ Related docs:
 - `docs/Ops/KB_Weekly_Review_Checklist.md`
 - `docs/Ops/KB_Monthly_Checkpoint_Template.md`
 
-## Evidence Location Note
+## Docs and QA Entry
 
-Historical `.runtime` evidence was archived during cleanup.
-
-Primary archive roots:
-- `archive/generated/cleanup_20260210_173315/`
-- `archive/obsolete/docs_round2_20260210_183405/`
-- `archive/obsolete/docs_round3_20260210_204843/`
+- Docs root: `docs/README.md`
+- QA hub: `docs/QA/README.md`
+- Cleanup report: `reports/cleanup/cleanup_report_2026-02-11.md`

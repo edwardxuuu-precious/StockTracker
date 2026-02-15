@@ -142,12 +142,6 @@ app.include_router(market_data.router, prefix="/api/v1/market-data", tags=["mark
 app.include_router(knowledge_base.router, prefix="/api/v1/kb", tags=["knowledge-base"])
 app.include_router(agent.router, prefix="/api/v1/agent", tags=["agent"])
 app.include_router(chat.router, prefix="/api/v1/chat", tags=["chat"])
-# Additional routers will be added in later phases
-# app.include_router(chat.router, prefix="/api/v1/chat", tags=["chat"])
-# app.include_router(stock.router, prefix="/api/v1/stocks", tags=["stocks"])
-# app.include_router(strategy.router, prefix="/api/v1/strategies", tags=["strategies"])
-# app.include_router(backtest.router, prefix="/api/v1/backtests", tags=["backtests"])
-# app.include_router(realtime.router, prefix="/api/v1/realtime", tags=["realtime"])
 
 
 if __name__ == "__main__":

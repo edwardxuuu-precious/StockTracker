@@ -1,6 +1,9 @@
 """Agent APIs for strategy generation, tuning, and reporting."""
 from __future__ import annotations
 
+import logging
+import time
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
@@ -30,6 +33,7 @@ from ...services.llm_service import (
     probe_llm_connection,
 )
 from ...services.agent_service import (
+    build_fallback_ai_backtest_insights,
     build_ai_backtest_insights,
     build_qualitative_recommendations,
     build_quantitative_recommendations,
@@ -40,10 +44,12 @@ from ...services.agent_service import (
     now_utc,
     trial_objective_value,
 )
+from ...services.agent_report_observability import record_agent_report_event
 from ...services.knowledge_base import resolve_governance_policy
 from .backtest import run_backtest
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 
 def _next_version_no(db: Session, strategy_id: int) -> int:
@@ -234,6 +240,7 @@ async def build_backtest_report(
     payload: AgentReportRequest,
     db: Session = Depends(get_db),
 ):
+    report_start = time.perf_counter()
     backtest = db.query(Backtest).filter(Backtest.id == backtest_id).first()
     if not backtest:
         raise HTTPException(status_code=404, detail="Backtest not found")
@@ -286,10 +293,21 @@ async def build_backtest_report(
     citations = [AgentCitation(**item) for item in citations_raw]
 
     markdown = build_report_markdown(backtest, trades, all_recs)
+    llm_meta: dict | None = None
+    fallback_used = False
+    fallback_reason: str | None = None
     try:
-        ai_insights = build_ai_backtest_insights(backtest, trades, payload.question)
+        ai_insights, llm_meta = build_ai_backtest_insights(backtest, trades, payload.question)
     except LLMUnavailableError as exc:
-        raise HTTPException(status_code=503, detail=str(exc)) from exc
+        fallback_used = True
+        fallback_reason = str(exc)
+        llm_meta = getattr(exc, "metadata", {}) or {}
+        ai_insights = build_fallback_ai_backtest_insights(
+            backtest,
+            trades,
+            all_recs,
+            reason=fallback_reason,
+        )
     if ai_insights:
         markdown += f"\n\n{ai_insights}\n"
     if citations:
@@ -301,6 +319,40 @@ async def build_backtest_report(
                 f"score={item.score:.4f} confidence={item.confidence} flags={flags} {item.snippet}\n"
             )
 
+    report_latency_ms = (time.perf_counter() - report_start) * 1000.0
+    provider = str((llm_meta or {}).get("provider") or llm_runtime_info().get("provider") or "unknown")
+    llm_latency_ms = (
+        None if llm_meta is None else llm_meta.get("latency_ms")
+    )
+    llm_retry_count = int((llm_meta or {}).get("retry_count") or 0)
+    llm_timeout_seconds = (llm_meta or {}).get("timeout_seconds")
+    llm_error_type = (llm_meta or {}).get("error_type")
+    timeout_hit = str(llm_error_type).lower() == "timeout"
+
+    logger.info(
+        "[AGENT_REPORT] provider=%s latency_ms=%.2f retry_count=%s timeout=%s "
+        "error_type=%s fallback_used=%s",
+        provider,
+        report_latency_ms,
+        llm_retry_count,
+        llm_timeout_seconds,
+        llm_error_type,
+        fallback_used,
+    )
+    record_agent_report_event(
+        success=True,
+        fallback_used=fallback_used,
+        timeout_hit=timeout_hit,
+        report_latency_ms=report_latency_ms,
+        llm_provider=provider,
+        llm_latency_ms=(float(llm_latency_ms) if llm_latency_ms is not None else None),
+        llm_retry_count=llm_retry_count,
+        llm_timeout_seconds=(
+            float(llm_timeout_seconds) if llm_timeout_seconds is not None else None
+        ),
+        llm_error_type=str(llm_error_type) if llm_error_type else None,
+    )
+
     return AgentReportResponse(
         backtest_id=backtest.id,
         generated_at=now_utc(),
@@ -308,4 +360,6 @@ async def build_backtest_report(
         quantitative_recommendations=[AgentRecommendation(**item) for item in quant],
         qualitative_recommendations=[AgentRecommendation(**item) for item in qual],
         citations=citations,
+        fallback_used=fallback_used,
+        fallback_reason=fallback_reason,
     )

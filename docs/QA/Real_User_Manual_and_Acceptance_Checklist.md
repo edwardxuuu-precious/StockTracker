@@ -4,7 +4,7 @@
 - 适用版本: 当前仓库 `main` 分支（截至 2026-02-10）
 - 目标: 用一份文档完成项目介绍、使用教程、功能验收、预期效果与实现原理说明
 - 验收基线:
-  - `venv\Scripts\python -m pytest backend/tests -q` -> `79 passed`
+  - `venv\Scripts\python -m pytest backend/tests -q` -> `86 passed`
   - `cd frontend && npm run lint` -> 通过
   - `cd frontend && npm run test:unit` -> 通过
 
@@ -95,7 +95,7 @@ StockTracker 是一个面向个人投资/量化策略验证的本地化系统，
 在仓库根目录运行：
 
 ```bat
-start-all.bat
+start-all.cmd
 ```
 
 预期效果：
@@ -386,7 +386,7 @@ curl http://localhost:<后端端口>/api/v1/portfolios/
 
 | 优先级 | 用例ID | 验收目标 | 操作步骤（简版） | 预期结果（通过标准） |
 | --- | --- | --- | --- | --- |
-| P0 | ENV-001 | 一键启动可用 | 运行 `start-all.bat` | Backend/Frontend 双窗口启动成功，`.runtime/backend-port.txt` 存在 |
+| P0 | ENV-001 | 一键启动可用 | 运行 `start-all.cmd`（`start-all.bat` 兼容） | Backend/Frontend 双窗口启动成功，`.runtime/backend-port.txt` 存在 |
 | P0 | ENV-002 | API 文档可访问 | 打开 `/docs` | 页面可打开，无 5xx |
 | P0 | PF-001 | 组合创建 | 新建组合，资金 100000 | 返回成功并跳详情页；现金与总值=100000 |
 | P0 | PF-002 | 组合编辑 | 编辑名称、状态 | 保存成功；列表筛选可按 active/inactive 生效 |

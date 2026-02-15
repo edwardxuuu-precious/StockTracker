@@ -1,5 +1,7 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Query, Request
 from pydantic import BaseModel
+
+from ...services.agent_report_observability import get_agent_report_metrics
 
 router = APIRouter()
 
@@ -36,3 +38,9 @@ async def click_event(event: ClickEvent, request: Request):
         flush=True,
     )
     return {"ok": True}
+
+
+@router.get("/agent-report-metrics")
+async def agent_report_metrics(window: int = Query(default=200, ge=1, le=1000)):
+    """Return in-memory metrics for agent report reliability."""
+    return get_agent_report_metrics(window=window)

@@ -31,6 +31,10 @@ class Settings(BaseSettings):
     AGENT_STARTUP_CHECK_LLM: bool = True
     AGENT_STARTUP_PROBE_LLM: bool = True
     AGENT_STARTUP_LLM_TIMEOUT_SECONDS: float = 8.0
+    AGENT_LLM_TIMEOUT_SECONDS: float = 90.0
+    AGENT_LLM_MAX_RETRIES: int = 3
+    AGENT_LLM_RETRY_BASE_SECONDS: float = 1.0
+    AGENT_LLM_RETRY_MAX_SECONDS: float = 8.0
 
     # Stock Data Providers
     TUSHARE_TOKEN: str = ""
